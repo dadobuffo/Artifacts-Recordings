@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Artifacts Recordings</title>
+
+    <!-- METADATA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Dario Menik">
+    <meta name="description" content="Audio Engineer, Producer, Sound Designer.">
+    <meta name="theme-color" content="#161616">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/audio-player.css">
+    <link rel="stylesheet" href="styles/discography-grid.css">
+    <link rel="stylesheet" href="styles/modal.css">
+
+    <!-- JS -->
+    <script src="scripts/audio-player.js" defer></script>
+    <script src="scripts/modal.js" defer></script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-left-section">
+            <p>artifacts recordings</p>
+        </div>
+
+        <nav class="header-right-section">
+            <p> <a href="index.html">home</a> </p>
+            <p> <a href="discography.html">discography</a> </p>
+            <p> <a href="faq.html">faq</a> </p>
+            <p> <a href="contact.html">contact</a> </p>
+        </nav>
+    </header>
+
+    <main>
+        <div class="audio-player">
+            <div class="current-song">
+                <div class="player-left-section">
+                    <img class="current-song-cover" id="cover" src="images/covers/Dreaded Dale - Kingslayer.jpg"
+                        alt="Dreaded Dale - Kingslayer">
+                </div>
+                <div class="player-right-section">
+                    <div class="current-song-info">
+                        <div class="current-song-artist">
+                            <p id="artist">Dreaded Dale</p>
+                        </div>
+                        <div class="current-song-title">
+                            <p id="title">Kingslayer</p>
+                        </div>
+                        <div class="current-song-details">
+                            <p id="details">Produced | Engineered | Mixed | Mastered</p>
+                        </div>
+                    </div>
+                    <div class="player-controls">
+                        <div class="current-song-controls">
+                            <div class="player-controls-left">
+                                <button class="player-controls-big-button" id="play-btn">
+                                    <img src="icons\audio player\play.svg" alt="Play">
+                                </button>
+                                <button class="player-controls-small-button" id="skip-back-btn">
+                                    <img src="icons\audio player\skip_back.svg" alt="Skip back">
+                                </button>
+                                <button class="player-controls-small-button" id="skip-forward-btn">
+                                    <img src="icons\audio player\skip_forward.svg" alt="Skip forward">
+                                </button>
+                                <div class="current-song-time">
+                                    <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+                                </div>
+                            </div>
+                            <div class="player-controls-right">
+                                <button class="player-controls-small-button" id="volume-btn">
+                                    <img src="icons\audio player\play.svg" alt="Volume">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="current-song-seek-bar">
+                            <input type="range" id="seek-bar" min="0" max="100" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="playlist" id="playlist">
+
+            </ul>
+
+
+
+        </div>
+
+        <!-- 
+
+
+        <div class="audio-player">
+            <div class="current-track">
+                <img id="cover" src="images/covers/Dreaded Dale - Kingslayer.jpg" alt="Dreaded Dale - Kingslayer">
+                <div class="info">
+                    <h2 id="title">Kingslayer</h2>
+                    <p id="artist">Dreaded Dale</p>
+                    <p id="details">Produced | Engineered | Mixed | Mastered</p>
+                    <audio id="audio-player" src="audio/kingslayer.wav"></audio>
+                    <div class="controls">
+                        <button id="play-btn">▶</button>
+                        <input type="range" id="seek-bar" min="0" max="100" value="0">
+                        <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                    </div>
+                </div>
+            </div>
+            <ul class="playlist" id="playlist">
+                
+            </ul>
+        </div>
+        <script src="script.js"></script> -->
+
+
+
+        <div class="discography-grid">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Ask Me Another - Pictures.jpg"
+                        alt="Ask Me Another - Pictures">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Ask Me Another - Pictures</p>
+                        <p class="grid-item-role">engineered, mixed, mastered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Jera - Burden.jpg" alt="Jera - Burden">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Jera - Burden</p>
+                        <p class="grid-item-role">recorded, engineered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Jera - Destined Death.jpg"
+                        alt="Jera - Destined Death">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Jera - Destined Death</p>
+                        <p class="grid-item-role">recorded, engineered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Dreaded Dale - Kingslayer.jpg"
+                        alt="Dreaded Dale - Kingslayer">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Dreaded Dale - Kingslayer</p>
+                        <p class="grid-item-role">engineered, mixed, mastered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Jera - EP.jpg" alt="Jera - EP">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Jera - EP</p>
+                        <p class="grid-item-role">recorded, engineered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/FRVGMENTS - Until The End.jpg"
+                        alt="FRVGMENTS - Until The End">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">FRVGMENTS - Until The End</p>
+                        <p class="grid-item-role">engineered, mixed, mastered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/FRVGMENTS - Behind The Lies.jpg"
+                        alt="FRVGMENTS - Behind The Lies">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">FRVGMENTS - Until The End</p>
+                        <p class="grid-item-role">engineered, mixed, mastered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/FRVGMENTS - Silver Bullet.jpg"
+                        alt="FRVGMENTS - Silver Bullet">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">FRVGMENTS - Until The End</p>
+                        <p class="grid-item-role">engineered, mixed, mastered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/FRVGMENTS - The Reaper.jpg"
+                        alt="FRVGMENTS - The Reaper">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">FRVGMENTS - The Reaper</p>
+                        <p class="grid-item-role">engineered, mixed, mastered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/SynrChase - MVRK KNØPFLER.jpg"
+                        alt="SynrChase - MVRK KNØPFLER">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">SynrChase - MVRK KNØPFLER</p>
+                        <p class="grid-item-role">produced, engineered, mixed, mastered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Dawn Won't Come - Alice In Wasteland.jpg"
+                        alt="Dawn Won't Come - Alice In Wasteland">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Dawn Won't Come - Alice In Wasteland</p>
+                        <p class="grid-item-role">produced, engineered, mixed, mastered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Dawn Won't Come - Untitled.jpg"
+                        alt="Dawn Won't Come - Untitled">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Dawn Won't Come - Untitled</p>
+                        <p class="grid-item-role">produced, recorded, engineered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Dawn Won't Come - Design.jpg"
+                        alt="Dawn Won't Come - Design">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Dawn Won't Come - Design</p>
+                        <p class="grid-item-role">produced, recorded, engineered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Dawn Won't Come - Thirtythree.jpg"
+                        alt="Dawn Won't Come - Thirtythree">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Dawn Won't Come - Thirtythree</p>
+                        <p class="grid-item-role">produced, recorded, engineered</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Dawn Won't Come - Ashes.jpg"
+                        alt="Dawn Won't Come - Ashes">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Dawn Won't Come - Ashes</p>
+                        <p class="grid-item-role">produced</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-item-cover" src="images/covers/Dawn Won't Come - Deadly Vices.jpg"
+                        alt="Dawn Won't Come - Deadly Vices">
+                    <div class="grid-item-overlay"></div>
+                    <div class="grid-item-text">
+                        <p class="grid-item-name">Dawn Won't Come - Deadly Vices</p>
+                        <p class="grid-item-role">produced</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <button data-open-modal>Open</button>
+
+
+
+
+        <dialog data-modal class="modal">
+            <div>this is a modal</div>
+            <button data-close-modal>close</button>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p> <a class="footer-mail" href="mailto:dariomenik@gmail.com"> dariomenik@gmail.com </a> </p>
+            <p class="footer-copyright"> &copy; 2024 &vert; All Rights Reserved </p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+/* AUDIO PLAYER */
+
+.audio-player {
+  width: 85%;
+  max-width: 680px;
+  min-width: 500px;
+  margin: 50px auto;
+
+  display: flex;
+  flex-direction: column;
+
+  line-height: 0;
+}
+
+.player-left-section {
+  height: 170px;
+  width: 170px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.player-right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  gap: 20px;
+}
+
+.current-song {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.current-song-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  gap: 10px;
+}
+
+.current-song-artist p {
+  font-size: 16px;
+}
+
+.current-song-title p {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+}
+
+.current-song-details p {
+  font-size: 16px;
+}
+
+.player-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  flex: 0.5;
+  gap: 5px;
+}
+
+.current-song-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-controls-left {
+  align-items: center;
+  gap: 5px;
+}
+.current-song-time {
+  margin-left: 10px;
+}
+.current-song-time span {
+  font-family: Poppins, sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+}
+
+.player-controls-right {
+}
+
+.player-controls-big-button {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.player-controls-small-button {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.player-controls-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.current-song-seek-bar input[type="range"] {
+  width: 100%;
+}

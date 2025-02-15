@@ -1,0 +1,257 @@
+[
+    {
+        "id": "1",
+        "cover": "../images/covers/Dawn Won't Come - Deadly Vices.jpg",
+        "background": "../images/covers/b_Dawn Won't Come - Deadly Vices.jpg",
+        "artist": "Dawn Won't Come",
+        "title": "Deadly Vices",
+        "info": "EP | metalcore | 2016",
+        "role": "produced",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "2",
+        "cover": "../images/covers/Dawn Won't Come - Ashes.jpg",
+        "background": "../images/covers/b_Dawn Won't Come - Ashes.jpg",
+        "artist": "Dawn Won't Come",
+        "title": "Ashes",
+        "info": "single | metalcore | 2017",
+        "role": "produced",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "3",
+        "cover": "../images/covers/Dawn Won't Come - Thirtythree.jpg",
+        "background": "../images/covers/b_Dawn Won't Come - Thirtythree.jpg",
+        "artist": "Dawn Won't Come",
+        "title": "Thirtythree",
+        "info": "album | metalcore | 2018",
+        "role": "produced, recorded, engineered",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "4",
+        "cover": "../images/covers/Dawn Won't Come - Design.jpg",
+        "background": "../images/covers/b_Dawn Won't Come - Design.jpg",
+        "artist": "Dawn Won't Come",
+        "title": "Design",
+        "info": "single | metalcore | 2018",
+        "role": "produced, recorded, engineered",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "5",
+        "cover": "../images/covers/Dawn Won't Come - Untitled.jpg",
+        "background": "../images/covers/b_Dawn Won't Come - Untitled.jpg",
+        "artist": "Dawn Won't Come",
+        "title": "Untitled",
+        "info": "single | metalcore | 2019",
+        "role": "produced, recorded, engineered",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "6",
+        "cover": "../images/covers/Dawn Won't Come - Alice In Wasteland.jpg",
+        "background": "../images/covers/b_Dawn Won't Come - Alice In Wasteland.jpg",
+        "artist": "Dawn Won't Come",
+        "title": "Alice In Wasteland",
+        "info": "single | metalcore | 2020",
+        "role": "produced, engineered, mixed, mastered",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "7",
+        "cover": "../images/covers/.jpg",
+        "background": "../images/covers/b_.jpg",
+        "artist": "aaa",
+        "title": "aaa",
+        "info": "aaa | aaa | 0000",
+        "role": "aaa, aaa, aaa",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "8",
+        "cover": "../images/covers/.jpg",
+        "background": "../images/covers/b_.jpg",
+        "artist": "aaa",
+        "title": "aaa",
+        "info": "aaa | aaa | 0000",
+        "role": "aaa, aaa, aaa",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "9",
+        "cover": "../images/covers/.jpg",
+        "background": "../images/covers/b_.jpg",
+        "artist": "aaa",
+        "title": "aaa",
+        "info": "aaa | aaa | 0000",
+        "role": "aaa, aaa, aaa",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "10",
+        "cover": "../images/covers/.jpg",
+        "background": "../images/covers/b_.jpg",
+        "artist": "aaa",
+        "title": "aaa",
+        "info": "aaa | aaa | 0000",
+        "role": "aaa, aaa, aaa",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "11",
+        "cover": "../images/covers/.jpg",
+        "background": "../images/covers/b_.jpg",
+        "artist": "aaa",
+        "title": "aaa",
+        "info": "aaa | aaa | 0000",
+        "role": "aaa, aaa, aaa",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "12",
+        "cover": "../images/covers/.jpg",
+        "background": "../images/covers/b_.jpg",
+        "artist": "aaa",
+        "title": "aaa",
+        "info": "aaa | aaa | 0000",
+        "role": "aaa, aaa, aaa",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "13",
+        "cover": "../images/covers/.jpg",
+        "background": "../images/covers/b_.jpg",
+        "artist": "aaa",
+        "title": "aaa",
+        "info": "aaa | aaa | 0000",
+        "role": "aaa, aaa, aaa",
+        "video": "https://www.youtube.com/embed/aaa",
+        "linkFacebook": "aaa",
+        "linkInstagram": "aaa",
+        "linkYoutube": "aaa",
+        "linkSpotify": "aaa",
+        "linkApple": "aaa"    
+        
+    }, 
+    {
+        "id": "14",
+        "cover": "../images/covers/Dreaded Dale - Kingslayer.jpg",
+        "background": "../images/covers/b_Dreaded Dale - Kingslayer.jpg",
+        "artist": "Dreaded Dale",
+        "title": "Kingslayer",
+        "info": "single | metalcore | 2022",
+        "role": "engineered, mixed, mastered",
+        "video": "https://www.youtube.com/embed/b2R5w0BxQcg",
+        "linkFacebook": "https://www.google.com/",
+        "linkInstagram": "https://www.google.com/",
+        "linkYoutube": "https://www.google.com/",
+        "linkSpotify": "https://www.google.com/",
+        "linkApple": "https://www.google.com/"    
+        
+    }, 
+    {
+        "id": "15",
+        "cover": "../images/covers/Jera - Burden.jpg",
+        "background": "../images/covers/b_Jera - Burden.jpg",
+        "artist": "Jera",
+        "title": "Burden",
+        "info": "single | metalcore | 2023",
+        "role": "recorded, engineered",
+        "video": "https://www.youtube.com/embed/7IkC27qZpTY",
+        "linkFacebook": "https://www.google.com/",
+        "linkInstagram": "https://www.google.com/",
+        "linkYoutube": "https://www.google.com/",
+        "linkSpotify": "https://www.google.com/",
+        "linkApple": "https://www.google.com/"    
+    },
+    {
+        "id": "16",
+        "cover": "../images/covers/Ask Me Another - Pictures.jpg",
+        "background": "../images/covers/b_Ask Me Another - Pictures.jpg",
+        "artist": "Ask Me Another",
+        "title": "Pictures",
+        "info": "single | metalcore | 2024",
+        "role": "engineered, mixed, mastered",
+        "video": "https://www.youtube.com/embed/6j46CV3c_H8",
+        "linkFacebook": "https://www.google.com/",
+        "linkInstagram": "https://www.google.com/",
+        "linkYoutube": "https://www.google.com/",
+        "linkSpotify": "https://www.google.com/",
+        "linkApple": "https://www.google.com/"    
+    }
+
+]
