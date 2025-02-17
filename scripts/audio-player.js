@@ -1,12 +1,13 @@
 // Riferimenti agli elementi HTML
+const coverImage = document.getElementById("cover"); // Immagine copertura
 const playBtn = document.getElementById("play-btn"); // Pulsante play/stop
-const seekBar = document.getElementById("seek-bar"); // Seek bar
 const currentDurationElem = document.getElementById("current-duration"); // Durata corrente
 const totalDurationElem = document.getElementById("total-duration"); // Durata totale
-const audio = new Audio(); // Oggetto audio (inizialmente senza file)
 const volumeBtn = document.getElementById("volume-btn"); // Pulsante volume
+const seekBar = document.getElementById("seek-bar"); // Seek bar
 const playlist = document.getElementById("playlist"); // Playlist
-const coverImage = document.getElementById("cover"); // Immagine copertura
+
+const audio = new Audio(); // Oggetto audio (inizialmente senza file)
 
 let isPlaying = false; // Stato di riproduzione
 let currentTrackIndex = 0; // Indice della traccia corrente
