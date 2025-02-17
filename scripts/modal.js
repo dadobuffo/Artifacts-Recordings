@@ -27,16 +27,16 @@ document.addEventListener("DOMContentLoaded", function () {
           <button class="close-modal" data-close-modal>&times;</button>
           <div class="modal-left-section">
               <img src="${item.cover}" alt="${item.artist} - ${item.title}">
-              <div class="modal-upper-text">
+              <div class="modal-left-text">
                   <p class="modal-artist">${item.artist}</p>
                   <p class="modal-title">${item.title}</p>
               </div>
-              <div class="modal-lower-text">
+              </div>
+              <div class="modal-right-section">
+              <div class="modal-right-text">
                   <p class="modal-info">${item.info}</p>
                   <p class="modal-role">${item.role}</p>
               </div>
-          </div>
-          <div class="modal-right-section">
               <div class="modal-video">
                   <iframe src="${item.video}" frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

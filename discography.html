@@ -49,56 +49,64 @@
     </header>
 
     <main>
+
+        <audio id="audio" src="assets\audio\DreadedDale_Kingslayer.wav"></audio>
+
         <div class="audio-player">
-            <div class="current-song">
+            <div class="player">
                 <div class="player-left-section">
-                    <img class="current-song-cover" id="cover"
-                        src="../assets/images/covers/Dreaded Dale - Kingslayer.jpg" alt="Dreaded Dale - Kingslayer">
+                    <img class="player-cover" id="cover" src="../assets/images/covers/Dreaded Dale - Kingslayer.jpg"
+                        alt="Dreaded Dale - Kingslayer">
                 </div>
                 <div class="player-right-section">
-                    <div class="current-song-info">
-                        <div class="current-song-artist">
+                    <div class="player-info">
+                        <div class="player-artist">
                             <p id="artist">Dreaded Dale</p>
                         </div>
-                        <div class="current-song-title">
+                        <div class="player-title">
                             <p id="title">Kingslayer</p>
                         </div>
-                        <div class="current-song-details">
-                            <p id="details">Produced | Engineered | Mixed | Mastered</p>
+                        <div class="player-role">
+                            <p id="role">produced | engineered | mixed | mastered</p>
                         </div>
                     </div>
                     <div class="player-controls">
-                        <div class="current-song-controls">
-                            <div class="player-controls-left">
-                                <button class="player-controls-big-button" id="play-btn">
+                        <div class="player-buttons">
+                            <div class="player-buttons-left">
+                                <button class="player-buttons-big" id="play-btn">
                                     <img src="assets/icons/audio player/play.svg" alt="Play">
                                 </button>
-                                <button class="player-controls-small-button" id="skip-back-btn">
+                                <button class="player-buttons-small" id="skip-back-btn">
                                     <img src="assets/icons/audio player/skip_back.svg" alt="Skip back">
                                 </button>
-                                <button class="player-controls-small-button" id="skip-forward-btn">
+                                <button class="player-buttons-small" id="skip-forward-btn">
                                     <img src="assets/icons/audio player/skip_forward.svg" alt="Skip forward">
                                 </button>
-                                <div class="current-song-time">
-                                    <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+                                <div class="player-duration">
+                                    <span id="current-duration">0:00</span> / <span id="total-duration">0:00</span>
                                 </div>
                             </div>
-                            <div class="player-controls-right">
-                                <button class="player-controls-small-button" id="volume-btn">
+                            <div class="player-buttons-right">
+                                <button class="player-buttons-small" id="volume-btn">
                                     <img src="assets/icons/audio player/play.svg" alt="Volume">
                                 </button>
                             </div>
                         </div>
-                        <div class="current-song-seek-bar">
+                        <div class="player-seek-bar">
                             <input type="range" id="seek-bar" min="0" max="100" value="0">
                         </div>
                     </div>
                 </div>
             </div>
             <ul class="playlist" id="playlist">
-
+                <!-- Example playlist, you can populate it dynamically -->
+                <li class="track" data-src="assets\audio\DreadedDale_Kingslayer.wav"
+                    data-cover="assets\images\covers\Dawn Won't Come - Ashes.jpg" data-title="Song 1"
+                    data-artist="Artist 1">Song 1</li>
+                <li class="track" data-src="assets\audio\DreadedDale_Kingslayer.wav"
+                    data-cover="assets\images\covers\Dawn Won't Come - Deadly Vices.jpg" data-title="Song 2"
+                    data-artist="Artist 2">Song 2</li>
             </ul>
-
 
 
         </div>
