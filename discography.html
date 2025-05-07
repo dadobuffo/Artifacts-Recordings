@@ -30,7 +30,8 @@
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Viaoda+Libre&display=swap"
         rel="stylesheet">
 </head>
 
@@ -50,7 +51,7 @@
 
     <main>
 
-        <audio id="audio" src="assets\audio\DreadedDale_Kingslayer.wav"></audio>
+        <audio id="audio" src="assets\audio\DreadedDale_Kingslayer.wav" preload="metadata"></audio>
 
         <div class="audio-player">
             <div class="player">
@@ -74,13 +75,13 @@
                         <div class="player-buttons">
                             <div class="player-buttons-left">
                                 <button class="player-buttons-big" id="play-btn">
-                                    <img src="assets/icons/audio player/play.svg" alt="Play">
+                                    <img src="assets/icons/play.svg" alt="Play">
                                 </button>
                                 <button class="player-buttons-small" id="skip-back-btn">
-                                    <img src="assets/icons/audio player/skip_back.svg" alt="Skip back">
+                                    <img src="assets/icons/skip_previous.svg" alt="Skip back">
                                 </button>
                                 <button class="player-buttons-small" id="skip-forward-btn">
-                                    <img src="assets/icons/audio player/skip_forward.svg" alt="Skip forward">
+                                    <img src="assets/icons/skip_next.svg" alt="Skip forward">
                                 </button>
                                 <div class="player-duration">
                                     <span id="current-duration">0:00</span> / <span id="total-duration">0:00</span>
@@ -88,7 +89,7 @@
                             </div>
                             <div class="player-buttons-right">
                                 <button class="player-buttons-small" id="volume-btn">
-                                    <img src="assets/icons/audio player/play.svg" alt="Volume">
+                                    <img src="assets/icons/volume_up.svg" alt="Volume">
                                 </button>
                             </div>
                         </div>
@@ -98,15 +99,23 @@
                     </div>
                 </div>
             </div>
-            <ul class="playlist" id="playlist">
-                <!-- Example playlist, you can populate it dynamically -->
-                <li class="track" data-src="assets\audio\DreadedDale_Kingslayer.wav"
-                    data-cover="assets\images\covers\Dawn Won't Come - Ashes.jpg" data-title="Song 1"
-                    data-artist="Artist 1">Song 1</li>
-                <li class="track" data-src="assets\audio\DreadedDale_Kingslayer.wav"
-                    data-cover="assets\images\covers\Dawn Won't Come - Deadly Vices.jpg" data-title="Song 2"
-                    data-artist="Artist 2">Song 2</li>
-            </ul>
+            <div class="playlist">
+                <button class="playlist-song" data-song="3">
+                    <div class="song-left-section">
+                        <p>1</p>
+                        <p>Kingslayer / Dreaded Dale</p>
+                    </div>
+                    <p class="song-right-section">03:44</p>
+                </button>
+                <hr class="song-divider">
+                <button class="playlist-song">
+                    <div class="song-left-section" data-song="1">
+                        <p>2</p>
+                        <p>Pictures / Ask Me Another</p>
+                    </div>
+                    <p class="song-right-section">03:35</p>
+                </button>
+            </div>
 
 
         </div>
@@ -136,7 +145,11 @@
         </div>
         <script src="script.js"></script> -->
 
-
+        <div class="divider">
+            <p> &#8226; </p>
+            <p> &#8226; </p>
+            <p> &#8226; </p>
+        </div>
 
         <div class="discography-grid">
             <div class="grid-container"></div>

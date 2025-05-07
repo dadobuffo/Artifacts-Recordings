@@ -1,15 +1,19 @@
 /* AUDIO PLAYER */
 
 .audio-player {
-  width: 85%;
+  width: 80%;
   max-width: 45rem;
-  min-width: 30rem;
-  margin: 5rem auto;
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
 
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 
-  line-height: 0;
+  font-family: "Roboto", sans-serif;
+  color: white;
 }
 
 .player {
@@ -18,149 +22,181 @@
   justify-content: space-between;
 
   gap: 2rem;
+
+  .player-left-section {
+    flex: 2;
+
+    .player-cover {
+      width: 100%;
+    }
+  }
+
+  .player-right-section {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 2rem;
+
+    .player-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      gap: 0.2rem;
+    }
+
+    .player-artist p {
+      letter-spacing: 0.1rem;
+    }
+
+    .player-title p {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+      margin: 0;
+    }
+
+    .player-role p {
+      font-size: 0.9rem;
+      letter-spacing: 0.1rem;
+      opacity: 0.8;
+    }
+
+    .player-controls {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
+    .player-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .player-buttons-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .player-buttons-big {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin-right: 0.7rem;
+      img {
+        height: 2rem;
+        opacity: 0.8;
+      }
+    }
+
+    .player-buttons-small {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 1.5rem;
+        opacity: 0.8;
+      }
+    }
+
+    .player-duration {
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 200;
+      color: white;
+      margin-left: 1.5rem;
+    }
+  }
+
+  .player-seek-bar input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    width: 100%;
+    height: 0.6rem;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.2rem;
+  }
+
+  .player-seek-bar input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.6rem;
+    background: linear-gradient(
+      to right,
+      rgb(255, 255, 255, 0.8) var(--range-value, 0%),
+      rgba(255, 255, 255, 0.1) var(--range-value, 0%)
+    );
+  }
+
+  .player-seek-bar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    margin-top: -4px;
+  }
 }
 
-.player-left-section {
-  flex: 2;
-}
-
-.player-cover {
+.playlist {
   width: 100%;
-}
+  max-height: 13.6rem;
+  overflow-y: auto;
+  padding-right: 1rem;
 
-.player-right-section {
-  flex: 5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
 
-  gap: 1.5rem;
-}
+  .playlist-song {
+    width: 100%;
+    height: 3.4rem;
 
-.player-info {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-  gap: 1.2rem;
-}
+    background-color: transparent;
+    border: none;
+    font: inherit;
+    color: inherit;
 
-.player-artist p {
-  letter-spacing: 0.1rem;
-}
+    .song-left-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      gap: 2rem;
 
-.player-title p {
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.2rem;
-  margin: 0;
-}
+      padding-left: 0.3rem;
+    }
 
-.player-role p {
-}
+    .song-right-section {
+      padding-right: 0.3rem;
+    }
+  }
 
-.player-controls {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
-}
+  .playlist-song:hover {
+    background-color: rgba(255, 255, 255, 0.01);
+  }
 
-.player-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.player-buttons-left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.player-buttons-big {
-  background-color: transparent;
-  border: none;
-  width: 2rem;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-.player-buttons-small {
-  background-color: transparent;
-  border: none;
-  width: 1rem;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-.player-duration {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 200;
-  color: white;
-  margin-left: 1.5rem;
-}
-/*
-.player-seek-bar input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-
-  width: 100%;
-  height: 0.7rem;
-  cursor: pointer;
-}
-
-.player-seek-bar input[type="range"]::-webkit-slider-runnable-track {
-  background-color: #ddd;
-
-  width: 100%;
-  height: 0.7rem;
-  cursor: pointer;
-}
-
-.player-seek-bar input[type="range"]::-webkit-slider-runnable-track {
-  background: linear-gradient(
-    to right,
-    #ff0000 0%,
-    #ff0000 var(--range-value, 0%)
-  );
-}
-
-.player-seek-bar input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-}
-*/
-.player-seek-bar input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #ddd;
-
-  width: 100%;
-  height: 0.7rem;
-  cursor: pointer;
-}
-
-.player-seek-bar input[type="range"]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 0.7rem;
-  cursor: pointer;
-}
-
-.player-seek-bar input[type="range"]::-webkit-slider-runnable-track {
-  background: linear-gradient(
-    to right,
-    #ff0000 0%,
-    #ff0000 var(--range-value, 0%)
-  );
-}
-
-.player-seek-bar input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
+  .song-divider {
+    width: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 1px;
+  }
 }

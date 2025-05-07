@@ -1,116 +1,277 @@
-// Riferimenti agli elementi HTML
-const coverImage = document.getElementById("cover"); // Immagine copertura
-const playBtn = document.getElementById("play-btn"); // Pulsante play/stop
-const currentDurationElem = document.getElementById("current-duration"); // Durata corrente
-const totalDurationElem = document.getElementById("total-duration"); // Durata totale
-const volumeBtn = document.getElementById("volume-btn"); // Pulsante volume
-const seekBar = document.getElementById("seek-bar"); // Seek bar
-const playlist = document.getElementById("playlist"); // Playlist
+// Dati delle canzoni (puoi anche caricarli via fetch se sono in un file esterno)
+const songs = [
+  {
+    id: "1",
+    cover: "../assets/images/covers/Dreaded Dale - Kingslayer.jpg",
+    artist: "Dreaded Dale",
+    title: "Kingslayer",
+    role: "engineered | mixed | mastered",
+    mp3: "../assets/audio/AAA.mp3",
+    duration: "3:44",
+  },
+  {
+    id: "2",
+    cover: "../assets/images/covers/Ask Me Another - Pictures.jpg",
+    artist: "Ask Me Another",
+    title: "Pictures",
+    role: "engineered | mixed | mastered",
+    mp3: "../assets/audio/AAA.mp3",
+    duration: "3:35",
+  },
+  {
+    id: "3",
+    cover: "../assets/images/covers/.jpg",
+    artist: "Dark Shift",
+    title: "Wishing Well (remix)",
+    role: "remixed",
+    mp3: "../assets/audio/AAA.mp3",
+    duration: "3:22",
+  },
+  {
+    id: "4",
+    cover: "../assets/images/covers/Dawn Won't Come - Alice In Wasteland.jpg",
+    artist: "Dawn Won't Come",
+    title: "Alice In Wasteland",
+    role: "produced | engineered | mixed | mastered",
+    mp3: "../assets/audio/AAA.mp3",
+    duration: "3:17",
+  },
+  {
+    id: "5",
+    cover: "../assets/images/covers/SynrChase - MVRK KNØPFLER.jpg",
+    artist: "SynrChase",
+    title: "Jurassic Strat",
+    role: "produced | engineered | mixed | mastered",
+    mp3: "../assets/audio/AAA.mp3",
+    duration: "3:10",
+  },
+  {
+    id: "6",
+    cover: "../assets/images/covers/FRVGMENTS - Until The End.jpg",
+    artist: "FRVGMENTS",
+    title: "Until The End",
+    role: "mixed | mastered",
+    mp3: "../assets/audio/AAA.mp3",
+    duration: "3:38",
+  },
+];
 
-const audio = new Audio(); // Oggetto audio (inizialmente senza file)
+// Variabile globale per tenere traccia della canzone attiva (indice nell'array songs)
+let currentSongIndex = null;
 
-let isPlaying = false; // Stato di riproduzione
-let currentTrackIndex = 0; // Indice della traccia corrente
+document.addEventListener("DOMContentLoaded", () => {
+  generatePlaylist(songs);
+  addPlaylistListeners(songs);
+  addPlayerControls(songs);
 
-// Funzione per formattare i secondi in formato "minuti:secondi"
-function formatTime(seconds) {
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${mins}:${secs < 10 ? "0" + secs : secs}`;
+  // Imposta la prima canzone come quella attiva
+  currentSongIndex = 0;
+  loadSong(currentSongIndex, false);
+});
+
+function generatePlaylist(songs) {
+  const playlistContainer = document.querySelector(".playlist");
+  playlistContainer.innerHTML = ""; // Svuota il container
+
+  songs.forEach((song, index) => {
+    const songButton = document.createElement("button");
+    songButton.classList.add("playlist-song");
+    // Collega il pulsante alla canzone usando un attributo personalizzato
+    songButton.setAttribute("data-song", song.id);
+
+    // Genera il markup interno (puoi personalizzarlo)
+    songButton.innerHTML = `
+      <div class="song-left-section">
+        <p>${index + 1}</p>
+        <p>${song.title} / ${song.artist}</p>
+      </div>
+      <p class="song-right-section">${song.duration || "00:00"}</p>
+    `;
+
+    playlistContainer.appendChild(songButton);
+
+    // Aggiungi un divider se non è l'ultimo elemento
+    if (index < songs.length - 1) {
+      const divider = document.createElement("hr");
+      divider.classList.add("song-divider");
+      playlistContainer.appendChild(divider);
+    }
+  });
 }
 
-// Funzione per aggiornare il player con una nuova traccia
-function loadTrack(track) {
-  audio.src = track.dataset.src;
-  coverImage.src = track.dataset.cover;
-  document.getElementById("title").textContent = track.dataset.title;
-  document.getElementById("artist").textContent = track.dataset.artist;
-  totalDurationElem.textContent = formatTime(audio.duration);
-  seekBar.value = 0; // Reset della seek bar
-  currentDurationElem.textContent = "0:00"; // Reset della durata corrente
+function addPlaylistListeners(songs) {
+  // Seleziona gli elementi del player
+  const coverEl = document.getElementById("cover");
+  const artistEl = document.getElementById("artist");
+  const titleEl = document.getElementById("title");
+  const roleEl = document.getElementById("role");
+  const audioEl = document.getElementById("audio");
+
+  const playlistButtons = document.querySelectorAll(".playlist-song");
+
+  playlistButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      // Imposta currentSongIndex in base all'id della canzone selezionata
+      const songId = button.getAttribute("data-song");
+      currentSongIndex = songs.findIndex((s) => s.id === songId);
+
+      // Carica la canzone selezionata
+      loadSong(currentSongIndex);
+    });
+  });
 }
 
-// Funzione per riprodurre o mettere in pausa la traccia
-function togglePlayPause() {
-  if (isPlaying) {
-    audio.pause();
-    playBtn.innerHTML = `<img src="assets/icons/audio player/play.svg" alt="Play">`;
-  } else {
-    audio.play();
-    playBtn.innerHTML = `<img src="assets/icons/audio player/pause.svg" alt="Pause">`;
+// Funzione che carica una canzone in base all'indice nell'array
+// Aggiungiamo un parametro opzionale autoPlay (default: true)
+function loadSong(index, autoPlay = true) {
+  const song = songs[index];
+  if (!song) {
+    console.error("Canzone non trovata per l'indice:", index);
+    return;
   }
-  isPlaying = !isPlaying;
-}
 
-// Gestione del clic sul pulsante Play/Stop
-playBtn.addEventListener("click", togglePlayPause);
+  // Seleziona gli elementi del player
+  const coverEl = document.getElementById("cover");
+  const artistEl = document.getElementById("artist");
+  const titleEl = document.getElementById("title");
+  const roleEl = document.getElementById("role");
+  const audioEl = document.getElementById("audio");
 
-// Gestione della durata totale dell'audio (impostiamo il valore al caricamento)
-audio.addEventListener("loadeddata", () => {
-  totalDurationElem.textContent = formatTime(audio.duration); // Impostiamo la durata totale
-});
+  coverEl.src = song.cover;
+  coverEl.alt = `${song.artist} - ${song.title}`;
+  artistEl.textContent = song.artist;
+  titleEl.textContent = song.title;
+  roleEl.textContent = song.role;
 
-// Aggiorniamo la durata corrente e la posizione della seek bar in tempo reale
-audio.addEventListener("timeupdate", () => {
-  currentDurationElem.textContent = formatTime(audio.currentTime); // Durata corrente
-  const progress = (audio.currentTime / audio.duration) * 100; // Calcoliamo la percentuale di avanzamento
-  seekBar.value = progress; // Aggiorniamo il valore della seek bar per visualizzare il progresso
-});
+  // Aggiorna l'audio
+  audioEl.src = song.mp3;
 
-// Funzione per gestire il clic sulla seek bar e far avanzare l'audio
-seekBar.addEventListener("click", (e) => {
-  const seekBarRect = seekBar.getBoundingClientRect(); // Otteniamo la posizione e la larghezza della seek bar
-  const offsetX = e.clientX - seekBarRect.left; // Calcoliamo la distanza tra il clic e il lato sinistro della seek bar
-  const seekBarWidth = seekBarRect.width; // Larghezza della seek bar
-  const newTime = (offsetX / seekBarWidth) * audio.duration; // Calcoliamo il nuovo tempo in base alla posizione del clic
-  audio.currentTime = newTime; // Aggiorniamo l'audio alla nuova posizione
-});
-
-// Gestione del cambio traccia tramite la playlist
-playlist.addEventListener("click", (e) => {
-  if (e.target && e.target.matches("li.track")) {
-    currentTrackIndex = Array.from(playlist.children).indexOf(e.target); // Otteniamo l'indice della traccia cliccata
-    loadTrack(e.target);
-    togglePlayPause(); // Iniziamo la riproduzione della traccia
+  // Avvia la riproduzione solo se autoPlay è true
+  if (autoPlay) {
+    audioEl.play();
   }
-});
 
-// Funzione per saltare alla traccia successiva
-function skipForward() {
-  currentTrackIndex = (currentTrackIndex + 1) % playlist.children.length;
-  loadTrack(playlist.children[currentTrackIndex]);
-  togglePlayPause();
-}
-
-// Funzione per tornare alla traccia precedente
-function skipBack() {
-  currentTrackIndex =
-    (currentTrackIndex - 1 + playlist.children.length) %
-    playlist.children.length;
-  loadTrack(playlist.children[currentTrackIndex]);
-  togglePlayPause();
-}
-
-// Gestione dei pulsanti di skip
-document
-  .getElementById("skip-forward-btn")
-  .addEventListener("click", skipForward);
-document.getElementById("skip-back-btn").addEventListener("click", skipBack);
-
-// Gestione del volume
-let isVolumeMuted = false;
-let previousVolume = 1;
-
-// Funzione per mutare o ripristinare il volume
-volumeBtn.addEventListener("click", () => {
-  if (isVolumeMuted) {
-    audio.volume = previousVolume;
-    isVolumeMuted = false;
-    volumeBtn.innerHTML = `<img src="assets/icons/audio player/volume.svg" alt="Volume">`; // Volume attivo
-  } else {
-    previousVolume = audio.volume;
-    audio.volume = 0;
-    isVolumeMuted = true;
-    volumeBtn.innerHTML = `<img src="assets/icons/audio player/mute.svg" alt="Mute">`; // Mute
+  // Aggiorna visivamente il pulsante attivo nella playlist
+  document
+    .querySelectorAll(".playlist-song.active")
+    .forEach((btn) => btn.classList.remove("active"));
+  const activeButton = document.querySelector(
+    `.playlist-song[data-song="${song.id}"]`
+  );
+  if (activeButton) {
+    activeButton.classList.add("active");
   }
-});
+}
+
+function addPlayerControls(songs) {
+  const audioEl = document.getElementById("audio");
+
+  // PLAY/PAUSE
+  const playBtn = document.getElementById("play-btn");
+  const playIcon = playBtn.querySelector("img");
+
+  playBtn.addEventListener("click", () => {
+    if (audioEl.paused) {
+      audioEl.play();
+      playIcon.src = "assets/icons/pause.svg";
+      playIcon.alt = "Pause";
+    } else {
+      audioEl.pause();
+      playIcon.src = "assets/icons/play.svg";
+      playIcon.alt = "Play";
+    }
+  });
+
+  audioEl.addEventListener("pause", () => {
+    playIcon.src = "assets/icons/play.svg";
+    playIcon.alt = "Play";
+  });
+
+  audioEl.addEventListener("play", () => {
+    playIcon.src = "assets/icons/pause.svg";
+    playIcon.alt = "Pause";
+  });
+
+  // SKIP INDIETRO
+  const skipBackBtn = document.getElementById("skip-back-btn");
+  skipBackBtn.addEventListener("click", () => {
+    if (currentSongIndex === null) return;
+    currentSongIndex =
+      currentSongIndex > 0 ? currentSongIndex - 1 : songs.length - 1;
+    loadSong(currentSongIndex);
+  });
+
+  // SKIP AVANTI
+  const skipForwardBtn = document.getElementById("skip-forward-btn");
+  skipForwardBtn.addEventListener("click", () => {
+    if (currentSongIndex === null) return;
+    currentSongIndex =
+      currentSongIndex < songs.length - 1 ? currentSongIndex + 1 : 0;
+    loadSong(currentSongIndex);
+  });
+
+  // VOLUME
+  const volumeBtn = document.getElementById("volume-btn");
+  const volumeIcon = volumeBtn.querySelector("img");
+
+  volumeBtn.addEventListener("click", () => {
+    audioEl.muted = !audioEl.muted;
+    if (audioEl.muted) {
+      volumeIcon.src = "assets/icons/volume_off.svg";
+      volumeIcon.alt = "Muted";
+    } else {
+      volumeIcon.src = "assets/icons/volume_up.svg";
+      volumeIcon.alt = "Volume";
+    }
+  });
+
+  // --- DURATA ---
+  const currentDurationEl = document.getElementById("current-duration");
+  const totalDurationEl = document.getElementById("total-duration");
+  const seekBar = document.getElementById("seek-bar");
+
+  // Dichiara il flag prima del suo utilizzo
+  let isDragging = false;
+
+  // Quando il file audio è caricato, imposta la durata totale e il valore massimo della seek bar
+  audioEl.addEventListener("loadedmetadata", () => {
+    totalDurationEl.textContent = formatTime(audioEl.duration);
+    seekBar.max = audioEl.duration;
+  });
+
+  // Aggiorna la barra di avanzamento e la visualizzazione del tempo corrente mentre la canzone viene riprodotta
+  audioEl.addEventListener("timeupdate", () => {
+    if (!isDragging) {
+      // Aggiorna la barra solo se non stai trascinando
+      seekBar.value = audioEl.currentTime;
+      currentDurationEl.textContent = formatTime(audioEl.currentTime);
+      const percent = (audioEl.currentTime / audioEl.duration) * 100;
+      seekBar.style.setProperty("--range-value", `${percent}%`);
+    }
+  });
+
+  // Quando l'utente inizia a trascinare la barra
+  seekBar.addEventListener("mousedown", () => {
+    isDragging = true;
+  });
+
+  // Durante il trascinamento, aggiorna solo il display del tempo
+  seekBar.addEventListener("input", () => {
+    currentDurationEl.textContent = formatTime(seekBar.value);
+    const percent = (seekBar.value / audioEl.duration) * 100;
+    seekBar.style.setProperty("--range-value", `${percent}%`);
+  });
+
+  // Quando l'utente rilascia il mouse, aggiorna la posizione dell'audio
+  seekBar.addEventListener("mouseup", () => {
+    isDragging = false;
+    audioEl.currentTime = seekBar.value;
+  });
+}
+
+// Funzione per formattare il tempo in mm:ss
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+}

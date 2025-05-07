@@ -1,18 +1,43 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  font-family: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  transition: color 0.1s;
+}
+
+h1 {
+  font-family: "Viaoda Libre", serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  text-align: center;
+}
+
 body {
   background-color: rgb(22, 22, 22);
 
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Serif", serif;
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 0.05em;
-  color: white;
+  color: rgb(255, 250, 234);
 
   display: flex;
   flex-direction: column;
+  position: relative;
 
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 header {
@@ -21,62 +46,67 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  height: 5rem;
-  padding: 0 80px;
+  height: 6rem;
+  padding: 0 8rem;
+
+  .header-left-section,
+  .header-right-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-right-section {
+    gap: 30px;
+  }
+
+  .header-right-section a {
+    letter-spacing: 0.1rem;
+    transition: color 0.15s;
+  }
+
+  .header-right-section a:hover {
+    color: gray;
+  }
 }
 
 main {
   flex-grow: 1;
+  background-color: transparent;
 }
 
 footer {
+  height: 9rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 8rem;
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    font-size: 0.9rem;
+  }
+
+  .footer-mail {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-copyright {
+    letter-spacing: 0.05em;
+  }
 }
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
-/* HEADER*/
-
-.header-left-section,
-.header-right-section {
+.divider {
   display: flex;
+  justify-content: center;
   align-items: center;
-}
+  gap: 3rem;
 
-.header-right-section {
-  gap: 30px;
-}
-
-.header-right-section a {
-  transition: color 0.15s;
-}
-
-.header-right-section a:hover {
-  color: gray;
-}
-
-/* FOOTER */
-
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 0;
-  font-size: 0.9rem;
-}
-
-.footer-mail {
-  font-weight: 500;
-  letter-spacing: 0.1em;
-}
-
-.footer-copyright {
-  letter-spacing: 0.05em;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
