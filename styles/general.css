@@ -45,7 +45,6 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   height: 6rem;
   padding: 0 8rem;
 
@@ -53,6 +52,14 @@ header {
   .header-right-section {
     display: flex;
     align-items: center;
+  }
+
+  .header-left-section {
+    height: 3rem;
+
+    .header-logo {
+      height: 100%;
+    }
   }
 
   .header-right-section {
