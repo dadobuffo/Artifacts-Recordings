@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // 1) Carica i dati JSON
   try {
-    const res = await fetch("data/portfolioData.json");
+    const res = await fetch("./data/portfolioData.json");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     portfolioData = await res.json();
   } catch (err) {
