@@ -163,8 +163,33 @@ function loadSong(index, autoPlay = true) {
   }
 }
 
+let audioCtx, track, gainNode;
+
 function addPlayerControls(songs) {
   const audioEl = document.getElementById("audio");
+
+  // ─── 1) SETUP WEB AUDIO API ───────────────────────────────────────────────
+  // Crei un AudioContext e un MediaElementSource per il tuo <audio>
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  track = audioCtx.createMediaElementSource(audioEl);
+
+  // Crei un GainNode per regolare il volume in dB
+  gainNode = audioCtx.createGain();
+
+  // Connetti tutto: audioEl → gainNode → destinazione
+  track.connect(gainNode).connect(audioCtx.destination);
+
+  // Imposta l’attenuazione desiderata (es. –6 dB)
+  const desiredDb = -8;
+  gainNode.gain.value = Math.pow(10, desiredDb / 20); // ≈ 0.501
+
+  // Alcuni browser bloccano l’audio finché non c’è un'interazione utente:
+  const resumeCtx = () => {
+    if (audioCtx.state === "suspended") audioCtx.resume();
+    document.removeEventListener("click", resumeCtx);
+  };
+  // Ascolta un click qualunque per “sbloccare” il context
+  document.addEventListener("click", resumeCtx);
 
   // PLAY/PAUSE
   const playBtn = document.getElementById("play-btn");
