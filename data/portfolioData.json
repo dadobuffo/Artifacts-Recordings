@@ -211,8 +211,8 @@
     },
     {
         "id": "15",
-        "cover": "../assets/images/covers/Jera - Burden.jpg",
-        "background": "../assets/images/covers/blurred/b_Jera - Burden.jpg",
+        "cover": "assets/images/covers/Jera - Burden.jpg",
+        "background": "assets/images/covers/blurred/b_Jera - Burden.jpg",
         "artist": "Jera",
         "title": "Burden",
         "info": "single | metalcore | 2023",
@@ -226,8 +226,8 @@
     },
     {
         "id": "16",
-        "cover": "../assets/images/covers/Ask Me Another - Pictures.jpg",
-        "background": "../assets/images/covers/blurred/b_Ask Me Another - Pictures.jpg",
+        "cover": "assets/images/covers/Ask Me Another - Pictures.jpg",
+        "background": "assets/images/covers/blurred/b_Ask Me Another - Pictures.jpg",
         "artist": "Ask Me Another",
         "title": "Pictures",
         "info": "single | metalcore | 2024",
