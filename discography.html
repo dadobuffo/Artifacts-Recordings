@@ -11,11 +11,11 @@
 
     <meta name="author" content="Dario Menik">
     <meta name="description" content="Audio Engineer, Producer, Sound Designer.">
-    <meta name="theme-color" content="#161616">
+    <meta name="theme-color" content="#111111">
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/general.css">
@@ -38,18 +38,21 @@
 <body>
     <header>
         <div class="header-left-section">
-            <p>artifacts recordings</p>
+            <img class="header-logo" src="assets/Logo.svg" alt="Artifacts Recordings Logo">
         </div>
 
         <nav class="header-right-section">
-            <p> <a href="index.html">home</a> </p>
-            <p> <a href="discography.html">discography</a> </p>
-            <p> <a href="faq.html">faq</a> </p>
-            <p> <a href="contact.html">contact</a> </p>
+            <p> <a href="index.html">Home</a> </p>
+            <p> <a href="discography.html">Discography</a> </p>
+            <p> <a href="faq.html">Faq</a> </p>
+            <p> <a href="contact.html">Contact</a> </p>
         </nav>
     </header>
 
     <main>
+        <div class="discography-title">
+            <h1>Discography</h1>
+        </div>
 
         <audio id="audio" src="assets\audio\DreadedDale_Kingslayer.wav" preload="metadata"></audio>
 
@@ -75,13 +78,13 @@
                         <div class="player-buttons">
                             <div class="player-buttons-left">
                                 <button class="player-buttons-big" id="play-btn">
-                                    <img src="assets/icons/play.svg" alt="Play">
+                                    <img src="assets/icons/colored/player/play.svg" alt="Play">
                                 </button>
                                 <button class="player-buttons-small" id="skip-back-btn">
-                                    <img src="assets/icons/skip_previous.svg" alt="Skip back">
+                                    <img src="assets/icons/colored/player/skip_previous.svg" alt="Skip back">
                                 </button>
                                 <button class="player-buttons-small" id="skip-forward-btn">
-                                    <img src="assets/icons/skip_next.svg" alt="Skip forward">
+                                    <img src="assets/icons/colored/player/skip_next.svg" alt="Skip forward">
                                 </button>
                                 <div class="player-duration">
                                     <span id="current-duration">0:00</span> / <span id="total-duration">0:00</span>
@@ -89,7 +92,7 @@
                             </div>
                             <div class="player-buttons-right">
                                 <button class="player-buttons-small" id="volume-btn">
-                                    <img src="assets/icons/volume_up.svg" alt="Volume">
+                                    <img src="assets/icons/colored/player/volume_up.svg" alt="Volume">
                                 </button>
                             </div>
                         </div>
@@ -103,47 +106,22 @@
                 <button class="playlist-song" data-song="3">
                     <div class="song-left-section">
                         <p>1</p>
-                        <p>Kingslayer / Dreaded Dale</p>
+                        <p>AAA / BBB</p>
                     </div>
-                    <p class="song-right-section">03:44</p>
+                    <p class="song-right-section">00:00</p>
                 </button>
                 <hr class="song-divider">
                 <button class="playlist-song">
                     <div class="song-left-section" data-song="1">
                         <p>2</p>
-                        <p>Pictures / Ask Me Another</p>
+                        <p>AAA / BBB</p>
                     </div>
-                    <p class="song-right-section">03:35</p>
+                    <p class="song-right-section">00:00</p>
                 </button>
             </div>
 
 
         </div>
-
-        <!-- 
-
-
-        <div class="audio-player">
-            <div class="current-track">
-                <img id="cover" src="images/covers/Dreaded Dale - Kingslayer.jpg" alt="Dreaded Dale - Kingslayer">
-                <div class="info">
-                    <h2 id="title">Kingslayer</h2>
-                    <p id="artist">Dreaded Dale</p>
-                    <p id="details">Produced | Engineered | Mixed | Mastered</p>
-                    <audio id="audio-player" src="audio/kingslayer.wav"></audio>
-                    <div class="controls">
-                        <button id="play-btn">▶</button>
-                        <input type="range" id="seek-bar" min="0" max="100" value="0">
-                        <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
-                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
-                    </div>
-                </div>
-            </div>
-            <ul class="playlist" id="playlist">
-                
-            </ul>
-        </div>
-        <script src="script.js"></script> -->
 
         <div class="divider">
             <p> &#8226; </p>
@@ -156,6 +134,33 @@
         </div>
 
     </main>
+
+    <dialog id="single-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-artist"
+        aria-describedby="modal-info">
+        <button class="close-modal" data-close-modal aria-label="Close">&times;</button>
+        <div class="modal-container">
+            <div class="modal-left-section">
+                <img class="modal-cover" src="" alt="">
+                <div class="modal-left-text">
+                    <p id="modal-artist" class="modal-artist"></p>
+                    <p id="modal-title" class="modal-title"></p>
+                </div>
+            </div>
+            <div class="modal-right-section">
+                <div class="modal-video">
+                    <iframe src="" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="modal-right-text">
+                    <p id="modal-info" class="modal-info"></p>
+                    <p class="modal-role"></p>
+                </div>
+                <div class="modal-links"></div>
+            </div>
+        </div>
+    </dialog>
 
     <footer>
         <div class="footer-container">

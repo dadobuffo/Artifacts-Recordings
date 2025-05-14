@@ -13,7 +13,9 @@
   gap: 1rem;
 
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: rgb(255, 250, 234);
+
+  text-transform: none;
 }
 
 .player {
@@ -88,10 +90,10 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
-      margin-right: 0.7rem;
+      margin-right: 1.5rem;
       img {
         height: 2rem;
-        opacity: 0.8;
+        opacity: 1;
       }
     }
 
@@ -99,10 +101,11 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+      margin-right: 0.5rem;
 
       img {
         width: 1.5rem;
-        opacity: 0.8;
+        opacity: 1;
       }
     }
 
@@ -110,8 +113,8 @@
       font-family: inherit;
       font-size: 0.9rem;
       font-weight: 200;
-      color: white;
-      margin-left: 1.5rem;
+      color: rgb(255, 250, 234);
+      margin-left: 1rem;
     }
   }
 
@@ -132,7 +135,7 @@
     height: 0.6rem;
     background: linear-gradient(
       to right,
-      rgb(255, 255, 255, 0.8) var(--range-value, 0%),
+      rgb(255, 250, 234, 1) var(--range-value, 0%),
       rgba(255, 255, 255, 0.1) var(--range-value, 0%)
     );
   }
@@ -173,6 +176,8 @@
     border: none;
     font: inherit;
     color: inherit;
+
+    cursor: pointer;
 
     .song-left-section {
       display: flex;

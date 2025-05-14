@@ -1,85 +1,113 @@
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("../data/portfolioData.json")
-    .then((response) => response.json())
-    .then((jsonData) => {
-      const gridContainer = document.querySelector(".grid-container");
+document.addEventListener("DOMContentLoaded", async () => {
+  const gridContainer = document.querySelector(".grid-container");
+  const modal = document.querySelector("#single-modal");
+  const closeBtn = modal.querySelector("[data-close-modal]");
+  let portfolioData = [];
+  let lastFocusedItem = null;
+  let lastScrollY = 0;
 
-      jsonData.reverse().forEach((item) => {
-        const gridItem = document.createElement("div");
-        gridItem.classList.add("grid-item");
-        gridItem.setAttribute("data-open-modal", `modal-${item.id}`);
-        gridItem.innerHTML = `
-          <img class="grid-item-cover" src="${item.cover}" alt="${item.artist} - ${item.title}">
-          <div class="grid-item-overlay"></div>
-          <div class="grid-item-text">
-            <p class="grid-item-name">${item.artist} - ${item.title}</p>
-            <p class="grid-item-role">${item.role}</p>
-          </div>
-        `;
-        gridContainer.appendChild(gridItem);
+  // 1) Carica i dati JSON
+  try {
+    const res = await fetch("../data/portfolioData.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    portfolioData = await res.json();
+  } catch (err) {
+    console.error("Errore caricamento JSON:", err);
+    gridContainer.textContent = "Errore nel caricamento della discografia.";
+    return;
+  }
 
-        const modal = document.createElement("dialog");
-        modal.classList.add("modal");
-        modal.setAttribute("id", `modal-${item.id}`);
-        modal.setAttribute("data-modal", "");
+  // 2) Popola la griglia
+  portfolioData
+    .slice()
+    .reverse()
+    .forEach((item) => {
+      if (!item.id || !item.cover || !item.artist || !item.title) return;
+      const card = document.createElement("div");
+      card.className = "grid-item";
+      card.dataset.id = item.id;
+      card.innerHTML = `
+      <img class="grid-item-cover" src="${item.cover}" alt="${item.artist} - ${
+        item.title
+      }">
+      <div class="grid-item-overlay"></div>
+      <div class="grid-item-text">
+        <p class="grid-item-name">${item.artist} - ${item.title}</p>
+        <p class="grid-item-role">${item.role || ""}</p>
+      </div>
+    `;
+      gridContainer.appendChild(card);
+    });
 
-        modal.innerHTML = `
-          <button class="close-modal" data-close-modal>&times;</button>
-          <div class="modal-left-section">
-              <img src="${item.cover}" alt="${item.artist} - ${item.title}">
-              <div class="modal-left-text">
-                  <p class="modal-artist">${item.artist}</p>
-                  <p class="modal-title">${item.title}</p>
-              </div>
-              </div>
-              <div class="modal-right-section">
-              <div class="modal-right-text">
-                  <p class="modal-info">${item.info}</p>
-                  <p class="modal-role">${item.role}</p>
-              </div>
-              <div class="modal-video">
-                  <iframe src="${item.video}" frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen>
-                  </iframe>
-              </div>
-              <div class="modal-links">
-                  <a href="${item.linkFacebook}" target="_blank" class="social-button">
-                      <img class="socials-icon" src="../assets/icons/socials/facebook.svg" alt="Follow ${item.artist} on Facebook">
-                  </a>
-                  <a href="${item.linkInstagram}" target="_blank" class="social-button">
-                      <img class="socials-icon" src="../assets/icons/socials/instagram.svg" alt="Follow ${item.artist} on Instagram">
-                  </a>
-                  <a href="${item.linkYoutube}" target="_blank" class="social-button">
-                      <img class="socials-icon" src="../assets/icons/socials/youtube.svg" alt="Follow ${item.artist} on YouTube">
-                  </a>
-                  <a href="${item.linkSpotify}" target="_blank" class="social-button">
-                      <img class="socials-icon" src="../assets/icons/socials/spotify.svg" alt="Follow ${item.artist} on Spotify">
-                  </a>
-                  <a href="${item.linkApple}" target="_blank" class="social-button">
-                      <img class="socials-icon" src="../assets/icons/socials/spotify.svg" alt="Follow ${item.artist} on Apple Music">
-                  </a>
-              </div>
-          </div>
-        `;
+  // 3) Apri il modal (delegated)
+  gridContainer.addEventListener("click", (e) => {
+    const card = e.target.closest(".grid-item");
+    if (!card) return;
 
-        document.body.appendChild(modal);
+    // 3.1) Salva scroll e blocca body
+    lastScrollY = window.scrollY;
+    document.body.classList.add("modal-open");
 
-        gridItem.addEventListener("click", () => {
-          console.log("Modal opening:", `modal-${item.id}`);
-          modal.showModal();
-        });
+    // 3.2) Ricorda focus
+    lastFocusedItem = card;
 
-        modal.querySelector(".close-modal").addEventListener("click", () => {
-          modal.close();
-        });
+    // 3.3) Trova dati e popola dialog
+    const item = portfolioData.find((i) => String(i.id) === card.dataset.id);
+    if (!item) return;
+    modal.querySelector(".modal-cover").src = item.cover;
+    modal.querySelector(".modal-cover").alt = `${item.artist} - ${item.title}`;
+    modal.querySelector(".modal-artist").textContent = item.artist;
+    modal.querySelector(".modal-title").textContent = item.title;
+    modal.querySelector(".modal-info").textContent = item.info || "";
+    modal.querySelector(".modal-role").textContent = item.role || "";
+    modal.querySelector(".modal-video iframe").src = item.video || "";
 
-        modal.addEventListener("click", (event) => {
-          if (event.target === modal) {
-            modal.close();
-          }
-        });
-      });
-    })
-    .catch((error) => console.error("Error loading JSON:", error));
+    // dopo aver popolato titolo, cover, ecc.
+    const linksContainer = modal.querySelector(".modal-links");
+    linksContainer.innerHTML = ""; // svuota ogni volta
+
+    const socials = {
+      facebook: { url: item.linkFacebook, icon: "facebook" },
+      instagram: { url: item.linkInstagram, icon: "instagram" },
+      youtube: { url: item.linkYoutube, icon: "youtube" },
+      spotify: { url: item.linkSpotify, icon: "spotify" },
+      apple: { url: item.linkApple, icon: "apple" },
+    };
+
+    Object.entries(socials).forEach(([key, { url, icon }]) => {
+      if (!url) return; // salta quelli null o undefined
+
+      // crea <a> e <img>
+      const a = document.createElement("a");
+      a.className = "social-button";
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.setAttribute("aria-label", `Segui ${item.artist} su ${key}`);
+
+      const img = document.createElement("img");
+      img.className = "socials-icon";
+      img.src = `assets/icons/colored/socials/${icon}.svg`;
+      img.alt = `${key}`;
+
+      a.appendChild(img);
+      linksContainer.appendChild(a);
+    });
+    modal.showModal();
+  });
+
+  // 4) Chiudi il modal e ripristina body + scroll + focus
+  function closeModal() {
+    const iframe = modal.querySelector(".modal-video iframe");
+    modal.close();
+    if (iframe) iframe.src = "";
+    document.body.classList.remove("modal-open");
+    window.scrollTo(0, lastScrollY);
+    lastFocusedItem?.focus();
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
 });

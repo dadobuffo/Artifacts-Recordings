@@ -1,14 +1,21 @@
+.discography-title {
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+}
+
 .discography-grid {
   display: flex;
   justify-content: center;
   margin-bottom: 5rem;
+
+  text-transform: none;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  grid-gap: 0.7rem;
-  max-width: 70%;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  max-width: 60%;
 }
 
 .grid-item {
@@ -59,8 +66,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
 
   padding: 0;
   margin: 0;
@@ -71,7 +78,7 @@
 }
 
 .grid-item-text p {
-  font-size: 0.8em;
+  font-size: 1rem;
   line-height: 1.2rem;
   letter-spacing: 0.08em;
   text-align: center;

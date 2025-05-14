@@ -6,7 +6,7 @@ const songs = [
     artist: "Dreaded Dale",
     title: "Kingslayer",
     role: "engineered | mixed | mastered",
-    mp3: "../assets/audio/AAA.mp3",
+    mp3: "../assets/audio/Dreaded Dale - Kingslayer.mp3",
     duration: "3:44",
   },
   {
@@ -15,16 +15,16 @@ const songs = [
     artist: "Ask Me Another",
     title: "Pictures",
     role: "engineered | mixed | mastered",
-    mp3: "../assets/audio/AAA.mp3",
+    mp3: "../assets/audio/Ask Me Another - Pictures.mp3",
     duration: "3:35",
   },
   {
     id: "3",
-    cover: "../assets/images/covers/.jpg",
+    cover: "../assets/images/covers/others/Dark Shift - Wishing Well.jpg",
     artist: "Dark Shift",
     title: "Wishing Well (remix)",
     role: "remixed",
-    mp3: "../assets/audio/AAA.mp3",
+    mp3: "../assets/audio/Dark Shift - Wishing Well.mp3",
     duration: "3:22",
   },
   {
@@ -33,7 +33,7 @@ const songs = [
     artist: "Dawn Won't Come",
     title: "Alice In Wasteland",
     role: "produced | engineered | mixed | mastered",
-    mp3: "../assets/audio/AAA.mp3",
+    mp3: "../assets/audio/Dawn Won't Come - Alice In Wasteland.mp3",
     duration: "3:17",
   },
   {
@@ -42,7 +42,7 @@ const songs = [
     artist: "SynrChase",
     title: "Jurassic Strat",
     role: "produced | engineered | mixed | mastered",
-    mp3: "../assets/audio/AAA.mp3",
+    mp3: "../assets/audio/SynrChase - Jurassic Strat.mp3",
     duration: "3:10",
   },
   {
@@ -51,7 +51,7 @@ const songs = [
     artist: "FRVGMENTS",
     title: "Until The End",
     role: "mixed | mastered",
-    mp3: "../assets/audio/AAA.mp3",
+    mp3: "../assets/audio/Frvgments - Until The End.mp3",
     duration: "3:38",
   },
 ];
@@ -173,22 +173,22 @@ function addPlayerControls(songs) {
   playBtn.addEventListener("click", () => {
     if (audioEl.paused) {
       audioEl.play();
-      playIcon.src = "assets/icons/pause.svg";
+      playIcon.src = "assets/icons/colored/player/pause.svg";
       playIcon.alt = "Pause";
     } else {
       audioEl.pause();
-      playIcon.src = "assets/icons/play.svg";
+      playIcon.src = "assets/icons/colored/player/play.svg";
       playIcon.alt = "Play";
     }
   });
 
   audioEl.addEventListener("pause", () => {
-    playIcon.src = "assets/icons/play.svg";
+    playIcon.src = "assets/icons/colored/player/play.svg";
     playIcon.alt = "Play";
   });
 
   audioEl.addEventListener("play", () => {
-    playIcon.src = "assets/icons/pause.svg";
+    playIcon.src = "assets/icons/colored/player/pause.svg";
     playIcon.alt = "Pause";
   });
 
@@ -217,10 +217,10 @@ function addPlayerControls(songs) {
   volumeBtn.addEventListener("click", () => {
     audioEl.muted = !audioEl.muted;
     if (audioEl.muted) {
-      volumeIcon.src = "assets/icons/volume_off.svg";
+      volumeIcon.src = "assets/icons/colored/player/volume_off.svg";
       volumeIcon.alt = "Muted";
     } else {
-      volumeIcon.src = "assets/icons/volume_up.svg";
+      volumeIcon.src = "assets/icons/colored/player/volume_up.svg";
       volumeIcon.alt = "Volume";
     }
   });
