@@ -23,6 +23,13 @@ h1 {
   letter-spacing: 0.5rem;
   text-align: center;
   text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Roboto Serif", serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -63,7 +70,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 6rem;
+  height: 7rem;
   padding: 0 8rem;
 
   .header-left-section,
@@ -86,11 +93,29 @@ header {
 
   .header-right-section a {
     letter-spacing: 0.1rem;
-    transition: color 0.15s;
+    transition: opacity 0.15s;
   }
 
   .header-right-section a:hover {
-    color: gray;
+    opacity: 0.3;
+    /*color: gray;*/
+  }
+
+  .external-symbol img {
+    position: absolute;
+    margin-left: 0.3rem;
+    width: 0.8rem;
+
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+
+  .external-link {
+    position: relative;
+  }
+
+  .external-link:hover .external-symbol img {
+    opacity: 1;
   }
 }
 

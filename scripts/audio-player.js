@@ -1,4 +1,3 @@
-// Dati delle canzoni (puoi anche caricarli via fetch se sono in un file esterno)
 const songs = [
   {
     id: "1",
@@ -7,7 +6,7 @@ const songs = [
     title: "Kingslayer",
     role: "engineered | mixed | mastered",
     mp3: "assets/audio/Dreaded Dale - Kingslayer.mp3",
-    duration: "3:44",
+    duration: "3:43",
   },
   {
     id: "2",
@@ -43,7 +42,7 @@ const songs = [
     title: "Jurassic Strat",
     role: "produced | engineered | mixed | mastered",
     mp3: "assets/audio/SynrChase - Jurassic Strat.mp3",
-    duration: "3:10",
+    duration: "3:09",
   },
   {
     id: "6",
@@ -52,11 +51,10 @@ const songs = [
     title: "Until The End",
     role: "mixed | mastered",
     mp3: "assets/audio/Frvgments - Until The End.mp3",
-    duration: "3:38",
+    duration: "5:01",
   },
 ];
 
-// Variabile globale per tenere traccia della canzone attiva (indice nell'array songs)
 let currentSongIndex = null;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -64,22 +62,19 @@ document.addEventListener("DOMContentLoaded", () => {
   addPlaylistListeners(songs);
   addPlayerControls(songs);
 
-  // Imposta la prima canzone come quella attiva
   currentSongIndex = 0;
   loadSong(currentSongIndex, false);
 });
 
 function generatePlaylist(songs) {
   const playlistContainer = document.querySelector(".playlist");
-  playlistContainer.innerHTML = ""; // Svuota il container
+  playlistContainer.innerHTML = "";
 
   songs.forEach((song, index) => {
     const songButton = document.createElement("button");
     songButton.classList.add("playlist-song");
-    // Collega il pulsante alla canzone usando un attributo personalizzato
     songButton.setAttribute("data-song", song.id);
 
-    // Genera il markup interno (puoi personalizzarlo)
     songButton.innerHTML = `
       <div class="song-left-section">
         <p>${index + 1}</p>
@@ -90,7 +85,6 @@ function generatePlaylist(songs) {
 
     playlistContainer.appendChild(songButton);
 
-    // Aggiungi un divider se non è l'ultimo elemento
     if (index < songs.length - 1) {
       const divider = document.createElement("hr");
       divider.classList.add("song-divider");
@@ -100,7 +94,6 @@ function generatePlaylist(songs) {
 }
 
 function addPlaylistListeners(songs) {
-  // Seleziona gli elementi del player
   const coverEl = document.getElementById("cover");
   const artistEl = document.getElementById("artist");
   const titleEl = document.getElementById("title");
@@ -111,18 +104,14 @@ function addPlaylistListeners(songs) {
 
   playlistButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      // Imposta currentSongIndex in base all'id della canzone selezionata
       const songId = button.getAttribute("data-song");
       currentSongIndex = songs.findIndex((s) => s.id === songId);
 
-      // Carica la canzone selezionata
       loadSong(currentSongIndex);
     });
   });
 }
 
-// Funzione che carica una canzone in base all'indice nell'array
-// Aggiungiamo un parametro opzionale autoPlay (default: true)
 function loadSong(index, autoPlay = true) {
   const song = songs[index];
   if (!song) {
@@ -130,7 +119,6 @@ function loadSong(index, autoPlay = true) {
     return;
   }
 
-  // Seleziona gli elementi del player
   const coverEl = document.getElementById("cover");
   const artistEl = document.getElementById("artist");
   const titleEl = document.getElementById("title");
@@ -143,15 +131,12 @@ function loadSong(index, autoPlay = true) {
   titleEl.textContent = song.title;
   roleEl.textContent = song.role;
 
-  // Aggiorna l'audio
   audioEl.src = song.mp3;
 
-  // Avvia la riproduzione solo se autoPlay è true
   if (autoPlay) {
     audioEl.play();
   }
 
-  // Aggiorna visivamente il pulsante attivo nella playlist
   document
     .querySelectorAll(".playlist-song.active")
     .forEach((btn) => btn.classList.remove("active"));
@@ -168,30 +153,23 @@ let audioCtx, track, gainNode;
 function addPlayerControls(songs) {
   const audioEl = document.getElementById("audio");
 
-  // ─── 1) SETUP WEB AUDIO API ───────────────────────────────────────────────
-  // Crei un AudioContext e un MediaElementSource per il tuo <audio>
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   track = audioCtx.createMediaElementSource(audioEl);
 
-  // Crei un GainNode per regolare il volume in dB
   gainNode = audioCtx.createGain();
 
-  // Connetti tutto: audioEl → gainNode → destinazione
   track.connect(gainNode).connect(audioCtx.destination);
 
-  // Imposta l’attenuazione desiderata (es. –6 dB)
-  const desiredDb = -8;
-  gainNode.gain.value = Math.pow(10, desiredDb / 20); // ≈ 0.501
+  const desiredDb = -6;
+  gainNode.gain.value = Math.pow(10, desiredDb / 20);
 
-  // Alcuni browser bloccano l’audio finché non c’è un'interazione utente:
   const resumeCtx = () => {
     if (audioCtx.state === "suspended") audioCtx.resume();
     document.removeEventListener("click", resumeCtx);
   };
-  // Ascolta un click qualunque per “sbloccare” il context
+
   document.addEventListener("click", resumeCtx);
 
-  // PLAY/PAUSE
   const playBtn = document.getElementById("play-btn");
   const playIcon = playBtn.querySelector("img");
 
@@ -217,7 +195,6 @@ function addPlayerControls(songs) {
     playIcon.alt = "Pause";
   });
 
-  // SKIP INDIETRO
   const skipBackBtn = document.getElementById("skip-back-btn");
   skipBackBtn.addEventListener("click", () => {
     if (currentSongIndex === null) return;
@@ -226,7 +203,6 @@ function addPlayerControls(songs) {
     loadSong(currentSongIndex);
   });
 
-  // SKIP AVANTI
   const skipForwardBtn = document.getElementById("skip-forward-btn");
   skipForwardBtn.addEventListener("click", () => {
     if (currentSongIndex === null) return;
@@ -235,7 +211,6 @@ function addPlayerControls(songs) {
     loadSong(currentSongIndex);
   });
 
-  // VOLUME
   const volumeBtn = document.getElementById("volume-btn");
   const volumeIcon = volumeBtn.querySelector("img");
 
@@ -250,24 +225,19 @@ function addPlayerControls(songs) {
     }
   });
 
-  // --- DURATA ---
   const currentDurationEl = document.getElementById("current-duration");
   const totalDurationEl = document.getElementById("total-duration");
   const seekBar = document.getElementById("seek-bar");
 
-  // Dichiara il flag prima del suo utilizzo
   let isDragging = false;
 
-  // Quando il file audio è caricato, imposta la durata totale e il valore massimo della seek bar
   audioEl.addEventListener("loadedmetadata", () => {
     totalDurationEl.textContent = formatTime(audioEl.duration);
     seekBar.max = audioEl.duration;
   });
 
-  // Aggiorna la barra di avanzamento e la visualizzazione del tempo corrente mentre la canzone viene riprodotta
   audioEl.addEventListener("timeupdate", () => {
     if (!isDragging) {
-      // Aggiorna la barra solo se non stai trascinando
       seekBar.value = audioEl.currentTime;
       currentDurationEl.textContent = formatTime(audioEl.currentTime);
       const percent = (audioEl.currentTime / audioEl.duration) * 100;
@@ -275,26 +245,22 @@ function addPlayerControls(songs) {
     }
   });
 
-  // Quando l'utente inizia a trascinare la barra
   seekBar.addEventListener("mousedown", () => {
     isDragging = true;
   });
 
-  // Durante il trascinamento, aggiorna solo il display del tempo
   seekBar.addEventListener("input", () => {
     currentDurationEl.textContent = formatTime(seekBar.value);
     const percent = (seekBar.value / audioEl.duration) * 100;
     seekBar.style.setProperty("--range-value", `${percent}%`);
   });
 
-  // Quando l'utente rilascia il mouse, aggiorna la posizione dell'audio
   seekBar.addEventListener("mouseup", () => {
     isDragging = false;
     audioEl.currentTime = seekBar.value;
   });
 }
 
-// Funzione per formattare il tempo in mm:ss
 function formatTime(time) {
   const minutes = Math.floor(time / 60);
   const seconds = Math.floor(time % 60);

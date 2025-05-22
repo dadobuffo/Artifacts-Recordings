@@ -1,0 +1,30 @@
+.faq-title {
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: start;
+  gap: 2rem;
+
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+
+  .faq-item {
+    .faq-question {
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      .highlighted-download {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}
