@@ -15,7 +15,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  max-width: 60%;
+  max-width: 60rem;
+  padding: 0 1.5rem;
 }
 
 .grid-item {
@@ -102,4 +103,27 @@
   width: 100%;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+@media (max-width: 768px) {
+  .discography-title {
+    margin-top: 3rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .grid-item-text {
+    width: 80%;
+    height: 80%;
+  }
+
+  .grid-item-text p {
+    font-size: 0.8rem;
+    line-height: normal;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
 }

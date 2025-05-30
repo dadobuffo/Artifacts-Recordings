@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   let lastFocusedItem = null;
   let lastScrollY = 0;
 
-  // 1) Carica i dati JSON
   try {
     const res = await fetch("./data/portfolioData.json");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  // 2) Popola la griglia
   portfolioData
     .slice()
     .reverse()
@@ -39,19 +37,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       gridContainer.appendChild(card);
     });
 
-  // 3) Apri il modal (delegated)
   gridContainer.addEventListener("click", (e) => {
     const card = e.target.closest(".grid-item");
     if (!card) return;
 
-    // 3.1) Salva scroll e blocca body
     lastScrollY = window.scrollY;
     document.body.classList.add("modal-open");
 
-    // 3.2) Ricorda focus
     lastFocusedItem = card;
 
-    // 3.3) Trova dati e popola dialog
     const item = portfolioData.find((i) => String(i.id) === card.dataset.id);
     if (!item) return;
     modal.querySelector(".modal-cover").src = item.cover;
@@ -62,9 +56,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     modal.querySelector(".modal-role").textContent = item.role || "";
     modal.querySelector(".modal-video iframe").src = item.video || "";
 
-    // dopo aver popolato titolo, cover, ecc.
     const linksContainer = modal.querySelector(".modal-links");
-    linksContainer.innerHTML = ""; // svuota ogni volta
+    linksContainer.innerHTML = "";
 
     const socials = {
       facebook: { url: item.linkFacebook, icon: "facebook" },
@@ -75,9 +68,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     Object.entries(socials).forEach(([key, { url, icon }]) => {
-      if (!url) return; // salta quelli null o undefined
+      if (!url) return;
 
-      // crea <a> e <img>
       const a = document.createElement("a");
       a.className = "social-button";
       a.href = url;
@@ -96,7 +88,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     modal.showModal();
   });
 
-  // 4) Chiudi il modal e ripristina body + scroll + focus
   function closeModal() {
     const iframe = modal.querySelector(".modal-video iframe");
     modal.close();
