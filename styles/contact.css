@@ -6,7 +6,7 @@
 .contact-text {
   display: flex;
   flex-direction: column;
-  max-width: 50rem;
+  max-width: 75ch;
   padding: 0 1.5rem;
   margin: 5rem auto;
   gap: 1rem;

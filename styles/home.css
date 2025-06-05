@@ -1,1 +1,91 @@
+.main-title {
+  margin-top: 15rem;
+  margin-bottom: 15rem;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-title h1 {
+  cursor: default;
+}
+
+.main-title h2 {
+  cursor: default;
+
+  font-weight: 200;
+  text-transform: lowercase;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  margin-top: 2rem;
+}
+
+.buttons-container a {
+  text-transform: uppercase;
+  border: 1px solid rgb(255, 250, 234);
+  padding: 0.5rem 1rem;
+}
+
+.buttons-container a:hover {
+  background-color: rgba(255, 250, 234, 0.1);
+}
+
+.about-section {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.about-left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 20rem;
+}
+
+.about-left-section img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.about-right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.5rem;
+
+  width: 100%;
+  max-width: 60ch;
+}
+
+.about-right-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.about-right-section p {
+  line-height: 1.5;
+}

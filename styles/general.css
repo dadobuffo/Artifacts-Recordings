@@ -106,7 +106,6 @@ header {
 
 .header-right-section a:hover {
   opacity: 0.3;
-  /*color: gray;*/
 }
 
 .external-symbol img {
@@ -177,14 +176,12 @@ footer {
   letter-spacing: 0.05em;
 }
 
-.divider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+.dividerr {
+  border: none;
+  border-top: 1px solid rgba(255, 250, 234, 0.5);
+  margin: 5rem auto;
+  width: 100%;
+  max-width: 40rem;
 }
 
 @media (max-width: 1000px) {

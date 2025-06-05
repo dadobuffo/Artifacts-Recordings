@@ -16,7 +16,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   max-width: 60rem;
-  padding: 0 1.5rem;
+  padding: 1.5rem;
 }
 
 .grid-item {
