@@ -21,6 +21,7 @@ body.modal-open {
 
 .modal::backdrop {
   background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
 }
 
 .close-modal {
@@ -145,14 +146,17 @@ body.modal-open {
   .modal-right-section {
     gap: 0rem;
   }
+
   .modal-video {
     margin-bottom: 1rem;
   }
+
   .modal-right-section p {
     font-size: 1rem;
     letter-spacing: 0.1rem;
     line-height: 1.2rem;
   }
+
   .modal-links {
     margin-top: 1rem;
     gap: 1.5rem;

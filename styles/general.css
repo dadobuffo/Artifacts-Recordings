@@ -77,8 +77,14 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 7rem;
   padding: 0 7rem;
+  z-index: 9999;
 }
 
 .header-left-section,
@@ -174,14 +180,6 @@ footer {
 
 .footer-copyright {
   letter-spacing: 0.05em;
-}
-
-.dividerr {
-  border: none;
-  border-top: 1px solid rgba(255, 250, 234, 0.5);
-  margin: 5rem auto;
-  width: 100%;
-  max-width: 40rem;
 }
 
 @media (max-width: 1000px) {
