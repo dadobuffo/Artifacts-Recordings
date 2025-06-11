@@ -1,0 +1,44 @@
+.temp-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp-modal-content {
+  background-color: rgb(22, 22, 22);
+  color: rgb(255, 250, 234);
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  max-width: 35rem;
+}
+
+.temp-modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.temp-modal-text {
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.temp-modal-close-btn {
+  text-transform: uppercase;
+  border: 1px solid rgb(255, 250, 234, 1);
+  color: rgb(255, 250, 234);
+  font-size: inherit;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.temp-modal-close-btn:hover {
+  background-color: rgba(255, 250, 234, 0.1);
+}

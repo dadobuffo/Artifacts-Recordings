@@ -15,26 +15,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+  max-width: 46rem;
+  padding: 3rem;
 }
 
 .logo {
-  width: 40rem;
-}
-
-.main-title span {
-  cursor: default;
-  display: block;
-  font-weight: lighter;
-  letter-spacing: 1rem;
-  line-height: 1.2;
-}
-
-.bold-part {
-  font-size: 6rem;
-}
-
-.light-part {
-  font-size: 5rem;
+  width: 100%;
 }
 
 .banner-container h2 {
@@ -53,6 +41,7 @@
   gap: 2rem;
 
   margin-top: 3rem;
+  width: fit-content;
 }
 
 .buttons-container a {
@@ -123,4 +112,7 @@
 }
 
 .services-section {
+}
+
+@media (max-width: 768px) {
 }
