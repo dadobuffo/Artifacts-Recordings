@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     portfolioData = await res.json();
   } catch (err) {
     console.error("Errore caricamento JSON:", err);
-    gridContainer.textContent = "Errore nel caricamento della discografia.";
+    gridContainer.textContent = "Error loading portfolio data.";
     return;
   }
 

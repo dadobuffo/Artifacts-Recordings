@@ -245,17 +245,17 @@ function addPlayerControls(songs) {
     }
   });
 
-  seekBar.addEventListener("mousedown", () => {
-    isDragging = true;
-  });
-
   seekBar.addEventListener("input", () => {
     currentDurationEl.textContent = formatTime(seekBar.value);
     const percent = (seekBar.value / audioEl.duration) * 100;
     seekBar.style.setProperty("--range-value", `${percent}%`);
   });
 
-  seekBar.addEventListener("mouseup", () => {
+  seekBar.addEventListener("pointerdown", () => {
+    isDragging = true;
+  });
+
+  seekBar.addEventListener("pointerup", () => {
     isDragging = false;
     audioEl.currentTime = seekBar.value;
   });

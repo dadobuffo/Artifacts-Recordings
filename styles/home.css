@@ -1,4 +1,6 @@
-.banner {
+/* #region: HERO */
+
+.hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,27 +12,31 @@
   position: relative;
 }
 
-.banner-container {
+.hero-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   width: 100%;
-  max-width: 46rem;
-  padding: 3rem;
+  max-width: 750px;
+  padding: 50px;
 }
 
 .logo {
   width: 100%;
 }
 
-.banner-container h2 {
+.logo-subtitle {
   cursor: default;
+
+  font-size: 1.5rem;
   font-weight: 200;
+  letter-spacing: 0.26em;
   text-transform: lowercase;
-  margin-top: 2rem;
-  letter-spacing: 0.4rem;
+  text-align: center;
+
+  margin: 20px 0;
 }
 
 .buttons-container {
@@ -38,16 +44,28 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 25px;
 
-  margin-top: 3rem;
-  width: fit-content;
+  margin-top: 40px;
 }
 
 .buttons-container a {
+  cursor: pointer;
+  padding: 10px 15px;
+
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 1px solid rgb(255, 250, 234, 1);
-  padding: 0.5rem 1rem;
+  text-align: center;
+  color: inherit;
+
+  background-color: rgba(197, 197, 197, 0);
+  border: 1px solid rgba(255, 250, 234, 0.5);
+  border-radius: 6px;
+
+  transition: background-color 0.15s;
 }
 
 .buttons-container a:hover {
@@ -55,11 +73,13 @@
 }
 
 .arrow-icon {
-  width: 4rem;
   position: absolute;
-  bottom: 2rem;
+  bottom: 30px;
+  width: 60px;
   cursor: pointer;
 }
+
+/* #endregion */
 
 .about-section {
   margin-top: 2rem;
@@ -111,8 +131,55 @@
   line-height: 1.5;
 }
 
-.services-section {
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 6.51vw;
+  }
+
+  .logo-subtitle {
+    font-size: 3.13vw;
+    margin: 2.6vw 0;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
+  .hero {
+    height: 95vh;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 40px;
+  }
+
+  .buttons-container a {
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+  }
+
+  .arrow-icon {
+    bottom: 30px;
+    width: 40px;
+  }
+}
+
+@media (max-width: 320px) {
+  .buttons-container {
+    gap: 4.69vw;
+    margin-top: 12.5vw;
+  }
+
+  .buttons-container a {
+    padding: 3.13vw;
+    font-size: 4.5vw;
+    border-radius: 1.25vw;
+  }
+
+  .arrow-icon {
+    bottom: 9.38vw;
+    width: 12.5vw;
+  }
 }
