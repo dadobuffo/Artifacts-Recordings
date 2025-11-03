@@ -238,5 +238,20 @@
         "linkYoutube": "https://www.youtube.com/@askmeanother3799",
         "linkSpotify": "https://open.spotify.com/intl-it/artist/1s8J7ua805vrGfdcJ49Sj9?si=8JYMA4M7RV-nZj7QLwaL9A",
         "linkApple": "https://music.apple.com/us/artist/ask-me-another/1650041491"
+    },
+    {
+        "id": "17",
+        "cover": "assets/images/covers/Jera - Consecrated.jpg",
+        "background": "assets/images/covers/blurred/b_Jera - Consecrated.jpg",
+        "artist": "Jera",
+        "title": "Consecrated",
+        "info": "single | metalcore | 2025",
+        "role": "recorded, engineered",
+        "video": "https://www.youtube.com/embed/-SAQsYqI0UA",
+        "linkFacebook": "https://www.facebook.com/jerabandit",
+        "linkInstagram": "https://www.instagram.com/jera.band/",
+        "linkYoutube": "https://www.youtube.com/channel/UCl-vHycAzTG4WILVXUJ90nQ",
+        "linkSpotify": "https://open.spotify.com/intl-it/artist/1HUQMHjmuDFjSxXJRAk430?si=IeJBD48BQe-vhmQXggt5cQ",
+        "linkApple": "https://music.apple.com/it/artist/jera/1589160588"
     }
 ]
