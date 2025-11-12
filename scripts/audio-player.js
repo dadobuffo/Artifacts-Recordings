@@ -1,7 +1,7 @@
 const songs = [
   {
     id: "1",
-    cover: "assets/images/covers/Dreaded Dale - Kingslayer.jpg",
+    cover: "assets/images/covers/Dreaded Dale - Kingslayer.webp",
     artist: "Dreaded Dale",
     title: "Kingslayer",
     role: "engineered | mixed | mastered",
@@ -10,7 +10,7 @@ const songs = [
   },
   {
     id: "2",
-    cover: "assets/images/covers/Ask Me Another - Pictures.jpg",
+    cover: "assets/images/covers/Ask Me Another - Pictures.webp",
     artist: "Ask Me Another",
     title: "Pictures",
     role: "engineered | mixed | mastered",
@@ -19,7 +19,7 @@ const songs = [
   },
   {
     id: "3",
-    cover: "assets/images/covers/others/Dark Shift - Wishing Well.jpg",
+    cover: "assets/images/covers/others/Dark Shift - Wishing Well.webp",
     artist: "Dark Shift",
     title: "Wishing Well (remix)",
     role: "remixed",
@@ -28,7 +28,7 @@ const songs = [
   },
   {
     id: "4",
-    cover: "assets/images/covers/Dawn Won't Come - Alice In Wasteland.jpg",
+    cover: "assets/images/covers/Dawn Won't Come - Alice In Wasteland.webp",
     artist: "Dawn Won't Come",
     title: "Alice In Wasteland",
     role: "produced | engineered | mixed | mastered",
@@ -37,7 +37,7 @@ const songs = [
   },
   {
     id: "5",
-    cover: "assets/images/covers/SynrChase - MVRK KNØPFLER.jpg",
+    cover: "assets/images/covers/SynrChase - MVRK KNØPFLER.webp",
     artist: "SynrChase",
     title: "Jurassic Strat",
     role: "produced | engineered | mixed | mastered",
@@ -46,7 +46,7 @@ const songs = [
   },
   {
     id: "6",
-    cover: "assets/images/covers/FRVGMENTS - Until The End.jpg",
+    cover: "assets/images/covers/FRVGMENTS - Until The End.webp",
     artist: "FRVGMENTS",
     title: "Until The End",
     role: "mixed | mastered",

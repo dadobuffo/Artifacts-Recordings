@@ -143,11 +143,7 @@
     <script src="scripts/modal.js" defer></script>
 
     <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Viaoda+Libre&display=swap"
-        rel="stylesheet">
+
 </head>
 
 <body>
@@ -211,7 +207,7 @@
         <div class="audio-player">
             <div class="player">
                 <div class="player-left-section">
-                    <img class="player-cover" id="cover" src="../assets/images/covers/Dreaded Dale - Kingslayer.jpg"
+                    <img class="player-cover" id="cover" src="../assets/images/covers/Dreaded Dale - Kingslayer.webp"
                         alt="Dreaded Dale - Kingslayer">
                 </div>
                 <div class="player-right-section">
@@ -239,7 +235,7 @@
                                     <img src="assets/icons/colored/player/skip_next.svg" alt="Skip forward">
                                 </button>
                                 <div class="player-duration">
-                                    <span id="current-duration">0:00</span> / <span id="total-duration">0:00</span>
+                                    <span id="current-duration">0:00</span> / <span id="total-duration">3:43</span>
                                 </div>
                             </div>
                             <div class="player-buttons-right">
@@ -249,7 +245,8 @@
                             </div>
                         </div>
                         <div class="player-seek-bar">
-                            <input type="range" id="seek-bar" min="0" max="100" value="0">
+                            <input type="range" id="seek-bar" min="0" max="100" value="0"
+                                aria-label="Timeline Position">
                         </div>
                     </div>
                 </div>
@@ -258,17 +255,33 @@
                 <button class="playlist-song" data-song="3">
                     <div class="song-left-section">
                         <p>1</p>
-                        <p>AAA / BBB</p>
+                        <p>Kingslayer / Dreaded Dale</p>
                     </div>
-                    <p class="song-right-section">00:00</p>
+                    <p class="song-right-section">3:43</p>
                 </button>
                 <hr class="song-divider">
                 <button class="playlist-song">
                     <div class="song-left-section" data-song="1">
                         <p>2</p>
-                        <p>AAA / BBB</p>
+                        <p>Pictures / Ask Me Another</p>
                     </div>
-                    <p class="song-right-section">00:00</p>
+                    <p class="song-right-section">3:35</p>
+                </button>
+                <hr class="song-divider">
+                <button class="playlist-song">
+                    <div class="song-left-section" data-song="1">
+                        <p>3</p>
+                        <p>Wishing Well (remix) / Dark Shift</p>
+                    </div>
+                    <p class="song-right-section">3:22</p>
+                </button>
+                <hr class="song-divider">
+                <button class="playlist-song">
+                    <div class="song-left-section" data-song="1">
+                        <p>4</p>
+                        <p>Alice In Wasteland / Dawn Won't Come</p>
+                    </div>
+                    <p class="song-right-section">3:17</p>
                 </button>
             </div>
         </div>

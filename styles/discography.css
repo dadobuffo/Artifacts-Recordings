@@ -1,3 +1,30 @@
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/roboto-v49-latin_latin-ext_symbols-200.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/roboto-v49-latin_latin-ext_symbols-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/roboto-v49-latin_latin-ext_symbols-500.woff2")
+    format("woff2");
+}
+
 .divider {
   display: flex;
   justify-content: center;
@@ -303,7 +330,7 @@
 }
 
 .grid-item-name {
-  font-weight: 400;
+  font-weight: regular;
 }
 
 .grid-item-role {
