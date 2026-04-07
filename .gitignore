@@ -1,0 +1,35 @@
+### Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+
+### Ruby
+Gemfile.lock
+
+### Node
+node_modules/
+npm-debug.log*
+
+### JetBrains
+.idea/
+cmake-build-*/
+*.iws
+*.iml
+out/
+
+### VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+*.vsix
+
+### OS
+.DS_Store
+Thumbs.db
+desktop.ini

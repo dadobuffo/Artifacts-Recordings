@@ -38,7 +38,7 @@ const songs = [
   {
     id: "5",
     cover: "assets/images/covers/SynrChase - MVRK KNØPFLER.webp",
-    artist: "SynrChase",
+    artist: "Synr Chase",
     title: "Jurassic Strat",
     role: "produced | engineered | mixed | mastered",
     mp3: "assets/audio/SynrChase - Jurassic Strat.mp3",
@@ -94,19 +94,12 @@ function generatePlaylist(songs) {
 }
 
 function addPlaylistListeners(songs) {
-  const coverEl = document.getElementById("cover");
-  const artistEl = document.getElementById("artist");
-  const titleEl = document.getElementById("title");
-  const roleEl = document.getElementById("role");
-  const audioEl = document.getElementById("audio");
-
   const playlistButtons = document.querySelectorAll(".playlist-song");
 
-  playlistButtons.forEach((button, index) => {
+  playlistButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const songId = button.getAttribute("data-song");
       currentSongIndex = songs.findIndex((s) => s.id === songId);
-
       loadSong(currentSongIndex);
     });
   });
@@ -134,14 +127,15 @@ function loadSong(index, autoPlay = true) {
   audioEl.src = song.mp3;
 
   if (autoPlay) {
-    audioEl.play();
+    audioEl.play().catch(() => {});
   }
 
   document
     .querySelectorAll(".playlist-song.active")
     .forEach((btn) => btn.classList.remove("active"));
+
   const activeButton = document.querySelector(
-    `.playlist-song[data-song="${song.id}"]`
+    `.playlist-song[data-song="${song.id}"]`,
   );
   if (activeButton) {
     activeButton.classList.add("active");
@@ -155,9 +149,7 @@ function addPlayerControls(songs) {
 
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   track = audioCtx.createMediaElementSource(audioEl);
-
   gainNode = audioCtx.createGain();
-
   track.connect(gainNode).connect(audioCtx.destination);
 
   const desiredDb = -6;
@@ -167,7 +159,6 @@ function addPlayerControls(songs) {
     if (audioCtx.state === "suspended") audioCtx.resume();
     document.removeEventListener("click", resumeCtx);
   };
-
   document.addEventListener("click", resumeCtx);
 
   const playBtn = document.getElementById("play-btn");
@@ -175,7 +166,7 @@ function addPlayerControls(songs) {
 
   playBtn.addEventListener("click", () => {
     if (audioEl.paused) {
-      audioEl.play();
+      audioEl.play().catch(() => {});
       playIcon.src = "assets/icons/colored/player/pause.svg";
       playIcon.alt = "Pause";
     } else {

@@ -1,336 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: DISCOGRAPHY | Artifacts Recordings
+description: "Full discography of recordings, mixes, and music productions from Artifacts Recordings."
+og_image: "/assets/og-home.jpg"
+schema: schema-discography.html
+styles:
+- discography.css
+- audio-player.css
+- modal.css
+scripts:
+- audio-player.js
+- modal.js
+---
 
-<head>
-    <title>DISCOGRAPHY | Artifacts Recordings</title>
+<main>
+    <div class="page-title">
+        <h1>Discography</h1>
+    </div>
 
-    <!-- METADATA -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Dario Menik">
-    <meta name="description"
-        content="Full discography of recordings, mixes, and music productions from Artifacts Recordings.">
-    <meta name="theme-color" content="#111111">
+    <audio id="audio" src="" preload="metadata"></audio>
 
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="DISCOGRAPHY | Artifacts Recordings">
-    <meta property="og:description"
-        content="Full discography of recordings, mixes, and music productions from Artifacts Recordings.">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="https://artifactsrecordings.com/discography.html">
-    <meta property="og:type" content="website">
-
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DISCOGRAPHY | Artifacts Recordings">
-    <meta name="twitter:description"
-        content="Full discography of recordings, mixes, and music productions from Artifacts Recordings.">
-    <meta name="twitter:image" content="">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://artifactsrecordings.com/#organization",
-          "name": "Artifacts Recordings",
-          "url": "https://artifactsrecordings.com",
-          "logo": "https://artifactsrecordings.com/assets/logo.svg",
-          "sameAs": [
-            "https://www.facebook.com/dario.menik/",
-            "https://www.instagram.com/dariomenik_mon/",
-            "https://linkedin.com/in/dario-menichetti/"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+39-388-391-7855",
-            "contactType": "customer service",
-            "email": "dariomenik@gmail.com",
-            "availableLanguage": ["English", "Italian"]
-          }
-        },
-        {
-          "@type": "Person",
-          "@id": "https://artifactsrecordings.com/#person",
-          "name": "Dario Menik",
-          "alternateName": "Dario Menichetti",
-          "jobTitle": "Audio Engineer, Producer, Sound Designer",
-          "worksFor": {
-            "@id": "https://artifactsrecordings.com/#organization"
-          },
-          "sameAs": [
-            "https://www.facebook.com/dario.menik/",
-            "https://www.instagram.com/dariomenik_mon/",
-            "https://linkedin.com/in/dario-menichetti/"
-          ],
-          "image": "https://dariomenik.com/assets/images/profile.webp"
-        }
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "MusicRecording",
-          "name": "Pictures",
-          "creator": "Ask Me Another"
-        },
-        {
-          "@type": "MusicRecording",
-          "name": "Burden",
-          "creator": "Jera"
-        },
-        {
-          "@type": "MusicRecording",
-          "name": "Destined Death",
-          "creator": "Jera"
-        },
-        {
-          "@type": "MusicRecording",
-          "name": "Kingslayer",
-          "creator": "Dreaded Dale"
-        },
-        {
-          "@type": "MusicRecording",
-          "name": "Until The End",
-          "creator": "FRVGMENTS"
-        },
-        {
-          "@type": "MusicRecording",
-          "name": "Alice In Borderland",
-          "creator": "Dawn Won't Come"
-        },
-        {
-          "@type": "MusicRecording",
-          "name": "Thirtythree",
-          "creator": "Dawn Won't Come"
-        },
-        {
-          "@type": "MusicRecording",
-          "name": "MVRK KNØPFLER",
-          "creator": "Synr Chase"
-        },
-        {
-          "@type": "CreativeWork",
-          "name": "Other recordings",
-          "description": "Additional recordings, mixes, and productions for various artists and bands."
-        }
-      ]
-    }
-    </script>
-
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Artifacts Recordings" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/general.css">
-    <link rel="stylesheet" href="styles/discography.css">
-    <link rel="stylesheet" href="styles/modal.css">
-
-    <!-- JS -->
-    <script src="scripts/general.js" defer></script>
-    <script src="scripts/audio-player.js" defer></script>
-    <script src="scripts/modal.js" defer></script>
-
-    <!-- FONTS -->
-
-</head>
-
-<body>
-    <header>
-        <div class="header-left-section">
-            <img class="header-logo" src="assets/Logo.svg" alt="Artifacts Recordings Logo">
-        </div>
-
-        <nav class="header-right-section">
-            <p> <a href="index.html">Home</a> </p>
-            <p> <a href="discography.html">Discography</a> </p>
-            <p> <a href="faq.html">Faq</a> </p>
-            <p> <a href="contact.html">Contact</a> </p>
-            <p>
-                <a href="https://dariomenik.com" class="external-link" target="_blank" rel="noopener noreferrer"
-                    title="sound design portfolio">
-                    Sound Design
-                    <span class="external-symbol">
-                        <img src="assets/icons/colored/other/external_link.svg" alt="external link">
-                    </span>
-                </a>
-            </p>
-        </nav>
-
-        <input type="checkbox" id="menu-toggle" hidden>
-
-        <label for="menu-toggle" class="open-header-button">
-            <img src="assets/icons/colored/other/menu.svg" alt="Open menu">
-        </label>
-
-        <nav class="header-mobile">
-            <label for="menu-toggle" class="close-header-button">
-                <img src="assets/icons/colored/other/close.svg" alt="Close menu">
-            </label>
-
-            <p> <a href="index.html">Home</a> </p>
-            <p> <a href="discography.html">Discography</a> </p>
-            <p> <a href="faq.html">Faq</a> </p>
-            <p> <a href="contact.html">Contact</a> </p>
-            <p>
-                <a href="https://dariomenik.com" class="external-link" target="_blank" rel="noopener noreferrer"
-                    title="sound design portfolio">
-                    Sound Design
-                    <span class="external-symbol">
-                        <img src="assets/icons/colored/other/external_link.svg" alt="external link">
-                    </span>
-                </a>
-            </p>
-        </nav>
-
-
-    </header>
-
-    <main>
-        <div class="page-title">
-            <h1>Discography</h1>
-        </div>
-
-        <audio id="audio" src="" preload="metadata"></audio>
-
-        <div class="audio-player">
-            <div class="player">
-                <div class="player-left-section">
-                    <img class="player-cover" id="cover" src="../assets/images/covers/Dreaded Dale - Kingslayer.webp"
-                        alt="Dreaded Dale - Kingslayer">
-                </div>
-                <div class="player-right-section">
-                    <div class="player-info">
-                        <div class="player-artist">
-                            <p id="artist">Dreaded Dale</p>
-                        </div>
-                        <div class="player-title">
-                            <p id="title">Kingslayer</p>
-                        </div>
-                        <div class="player-role">
-                            <p id="role">produced | engineered | mixed | mastered</p>
-                        </div>
+    <!-- #region PLAYER -->
+    <div class="audio-player">
+        <div class="player">
+            <div class="player-left-section">
+                <img class="player-cover" id="cover" src="assets/images/covers/Dreaded Dale - Kingslayer.webp"
+                    alt="Dreaded Dale - Kingslayer">
+            </div>
+            <div class="player-right-section">
+                <div class="player-info">
+                    <div class="player-artist">
+                        <p id="artist">Dreaded Dale</p>
                     </div>
-                    <div class="player-controls">
-                        <div class="player-buttons">
-                            <div class="player-buttons-left">
-                                <button class="player-buttons-big" id="play-btn">
-                                    <img src="assets/icons/colored/player/play.svg" alt="Play">
-                                </button>
-                                <button class="player-buttons-small" id="skip-back-btn">
-                                    <img src="assets/icons/colored/player/skip_previous.svg" alt="Skip back">
-                                </button>
-                                <button class="player-buttons-small" id="skip-forward-btn">
-                                    <img src="assets/icons/colored/player/skip_next.svg" alt="Skip forward">
-                                </button>
-                                <div class="player-duration">
-                                    <span id="current-duration">0:00</span> / <span id="total-duration">3:43</span>
-                                </div>
-                            </div>
-                            <div class="player-buttons-right">
-                                <button class="player-buttons-small" id="volume-btn">
-                                    <img src="assets/icons/colored/player/volume_up.svg" alt="Volume">
-                                </button>
+                    <div class="player-title">
+                        <p id="title">Kingslayer</p>
+                    </div>
+                    <div class="player-role">
+                        <p id="role">produced | engineered | mixed | mastered</p>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <div class="player-buttons">
+                        <div class="player-buttons-left">
+                            <button class="player-buttons-big" id="play-btn">
+                                <img src="assets/icons/colored/player/play.svg" alt="Play">
+                            </button>
+                            <button class="player-buttons-small" id="skip-back-btn">
+                                <img src="assets/icons/colored/player/skip_previous.svg" alt="Skip back">
+                            </button>
+                            <button class="player-buttons-small" id="skip-forward-btn">
+                                <img src="assets/icons/colored/player/skip_next.svg" alt="Skip forward">
+                            </button>
+                            <div class="player-duration">
+                                <span id="current-duration">0:00</span> / <span id="total-duration">3:43</span>
                             </div>
                         </div>
-                        <div class="player-seek-bar">
-                            <input type="range" id="seek-bar" min="0" max="100" value="0"
-                                aria-label="Timeline Position">
+                        <div class="player-buttons-right">
+                            <button class="player-buttons-small" id="volume-btn">
+                                <img src="assets/icons/colored/player/volume_up.svg" alt="Volume">
+                            </button>
                         </div>
                     </div>
+                    <div class="player-seek-bar">
+                        <input type="range" id="seek-bar" min="0" max="100" value="0" aria-label="Timeline Position">
+                    </div>
                 </div>
             </div>
-            <div class="playlist">
-                <button class="playlist-song" data-song="3">
-                    <div class="song-left-section">
-                        <p>1</p>
-                        <p>Kingslayer / Dreaded Dale</p>
-                    </div>
-                    <p class="song-right-section">3:43</p>
-                </button>
-                <hr class="song-divider">
-                <button class="playlist-song">
-                    <div class="song-left-section" data-song="1">
-                        <p>2</p>
-                        <p>Pictures / Ask Me Another</p>
-                    </div>
-                    <p class="song-right-section">3:35</p>
-                </button>
-                <hr class="song-divider">
-                <button class="playlist-song">
-                    <div class="song-left-section" data-song="1">
-                        <p>3</p>
-                        <p>Wishing Well (remix) / Dark Shift</p>
-                    </div>
-                    <p class="song-right-section">3:22</p>
-                </button>
-                <hr class="song-divider">
-                <button class="playlist-song">
-                    <div class="song-left-section" data-song="1">
-                        <p>4</p>
-                        <p>Alice In Wasteland / Dawn Won't Come</p>
-                    </div>
-                    <p class="song-right-section">3:17</p>
-                </button>
+        </div>
+        <div class="playlist">
+            <button class="playlist-song" data-song="3">
+                <div class="song-left-section">
+                    <p>1</p>
+                    <p>Kingslayer / Dreaded Dale</p>
+                </div>
+                <p class="song-right-section">3:43</p>
+            </button>
+            <hr class="song-divider">
+            <button class="playlist-song">
+                <div class="song-left-section" data-song="1">
+                    <p>2</p>
+                    <p>Pictures / Ask Me Another</p>
+                </div>
+                <p class="song-right-section">3:35</p>
+            </button>
+            <hr class="song-divider">
+            <button class="playlist-song">
+                <div class="song-left-section" data-song="1">
+                    <p>3</p>
+                    <p>Wishing Well (remix) / Dark Shift</p>
+                </div>
+                <p class="song-right-section">3:22</p>
+            </button>
+            <hr class="song-divider">
+            <button class="playlist-song">
+                <div class="song-left-section" data-song="1">
+                    <p>4</p>
+                    <p>Alice In Wasteland / Dawn Won't Come</p>
+                </div>
+                <p class="song-right-section">3:17</p>
+            </button>
+        </div>
+    </div>
+    <!-- #endregion -->
+
+    <div class="divider">
+        <p>+</p>
+        <p>+</p>
+        <p>+</p>
+    </div>
+
+    <div class="discography-grid">
+        <div class="grid-container"></div>
+    </div>
+</main>
+
+<dialog id="single-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-artist"
+    aria-describedby="modal-info">
+    <button class="close-modal" data-close-modal aria-label="Close">&times;</button>
+    <div class="modal-container">
+        <div class="modal-left-section">
+            <img class="modal-cover" src="" alt="">
+            <div class="modal-left-text">
+                <p id="modal-artist" class="modal-artist"></p>
+                <p id="modal-title" class="modal-title"></p>
             </div>
         </div>
-
-        <div class="divider">
-            <p> &#8226; </p>
-            <p> &#8226; </p>
-            <p> &#8226; </p>
-        </div>
-
-        <div class="discography-grid">
-            <div class="grid-container"></div>
-        </div>
-
-    </main>
-
-    <dialog id="single-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-artist"
-        aria-describedby="modal-info">
-        <button class="close-modal" data-close-modal aria-label="Close">&times;</button>
-        <div class="modal-container">
-            <div class="modal-left-section">
-                <img class="modal-cover" src="" alt="">
-                <div class="modal-left-text">
-                    <p id="modal-artist" class="modal-artist"></p>
-                    <p id="modal-title" class="modal-title"></p>
-                </div>
+        <div class="modal-right-section">
+            <div class="modal-video">
+                <iframe src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
-            <div class="modal-right-section">
-                <div class="modal-video">
-                    <iframe src="" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="modal-right-text">
-                    <p id="modal-info" class="modal-info"></p>
-                    <p class="modal-role"></p>
-                </div>
-                <div class="modal-links"></div>
+            <div class="modal-right-text">
+                <p id="modal-info" class="modal-info"></p>
+                <p class="modal-role"></p>
             </div>
+            <div class="modal-links"></div>
         </div>
-    </dialog>
-
-    <footer>
-        <div class="footer-container">
-            <p> <a class="footer-mail" href="mailto:dariomenik@gmail.com"> dariomenik@gmail.com </a> </p>
-            <p class="footer-copyright"> &copy; 2024 &vert; All Rights Reserved </p>
-        </div>
-    </footer>
-</body>
-
-</html>
+    </div>
+</dialog>

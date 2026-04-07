@@ -236,5 +236,19 @@
         "linkYoutube": "https://www.youtube.com/channel/UCl-vHycAzTG4WILVXUJ90nQ",
         "linkSpotify": "https://open.spotify.com/intl-it/artist/1HUQMHjmuDFjSxXJRAk430?si=IeJBD48BQe-vhmQXggt5cQ",
         "linkApple": "https://music.apple.com/it/artist/jera/1589160588"
+    },
+    {
+        "id": "18",
+        "cover": "assets/images/covers/Jera - Till The Cycle Starts Again.webp",
+        "artist": "Jera",
+        "title": "Till The Cycle Starts Again",
+        "info": "single | metalcore | 2026",
+        "role": "recorded, engineered",
+        "video": "https://www.youtube.com/embed/vkQp338toGM",
+        "linkFacebook": "https://www.facebook.com/jerabandit",
+        "linkInstagram": "https://www.instagram.com/jera.band/",
+        "linkYoutube": "https://www.youtube.com/channel/UCl-vHycAzTG4WILVXUJ90nQ",
+        "linkSpotify": "https://open.spotify.com/intl-it/artist/1HUQMHjmuDFjSxXJRAk430?si=IeJBD48BQe-vhmQXggt5cQ",
+        "linkApple": "https://music.apple.com/it/artist/jera/1589160588"
     }
 ]

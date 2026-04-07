@@ -1,167 +1,257 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Artifacts Recordings
+description: "Post-production studio for heavy music."
+og_image: "/assets/og-home.jpg"
+styles:
+- home.css
+- audio-player.css
+scripts:
+- audio-player.js
+---
 
-<head>
-    <title>Artifacts Recordings</title>
-
-    <!-- METADATA -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Dario Menik">
-    <meta name="description" content="Artifacts Recordings, audio production, mixing, and mastering services.">
-    <meta name="theme-color" content="#111111">
-
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Artifacts Recordings">
-    <meta property="og:description" content="Artifacts Recordings, audio production, mixing, and mastering services.">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="https://artifactsrecordings.com/">
-    <meta property="og:type" content="website">
-
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Artifacts Recordings">
-    <meta name="twitter:description" content="Artifacts Recordings, audio production, mixing, and mastering services.">
-    <meta name="twitter:image" content="">
-
-    <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://artifactsrecordings.com/#organization",
-          "name": "Artifacts Recordings",
-          "url": "https://artifactsrecordings.com",
-          "logo": "https://artifactsrecordings.com/assets/logo.svg",
-          "sameAs": [
-            "https://www.facebook.com/dario.menik/",
-            "https://www.instagram.com/dariomenik_mon/",
-            "https://linkedin.com/in/dario-menichetti/"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+39-388-391-7855",
-            "contactType": "customer service",
-            "email": "dariomenik@gmail.com",
-            "availableLanguage": ["English", "Italian"]
-          }
-        },
-        {
-          "@type": "Person",
-          "@id": "https://artifactsrecordings.com/#person",
-          "name": "Dario Menik",
-          "alternateName": "Dario Menichetti",
-          "jobTitle": "Audio Engineer, Producer, Sound Designer",
-          "worksFor": {
-            "@id": "https://artifactsrecordings.com/#organization"
-          },
-          "sameAs": [
-            "https://www.facebook.com/dario.menik/",
-            "https://www.instagram.com/dariomenik_mon/",
-            "https://linkedin.com/in/dario-menichetti/"
-          ],
-          "image": "https://dariomenik.com/assets/images/profile.webp"
-        }
-      ]
-    }
-    </script>
-
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Artifacts Recordings" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/general.css">
-    <link rel="stylesheet" href="styles/home.css">
-
-    <!-- JS -->
-    <script src="scripts/general.js" defer></script>
-
-    <!-- FONTS -->
-
-</head>
-
-<body>
-    <header>
-        <div class="header-left-section">
-            <img class="header-logo" src="assets/Logo.svg" alt="Artifacts Recordings Logo">
-        </div>
-
-        <nav class="header-right-section">
-            <p> <a href="index.html">Home</a> </p>
-            <p> <a href="discography.html">Discography</a> </p>
-            <p> <a href="faq.html">Faq</a> </p>
-            <p> <a href="contact.html">Contact</a> </p>
-            <p>
-                <a href="https://dariomenik.com" class="external-link" target="_blank" rel="noopener noreferrer"
-                    title="sound design portfolio">
-                    Sound Design
-                    <span class="external-symbol">
-                        <img src="assets/icons/colored/other/external_link.svg" alt="external link">
-                    </span>
-                </a>
-            </p>
-        </nav>
-
-        <input type="checkbox" id="menu-toggle" hidden>
-
-        <label for="menu-toggle" class="open-header-button">
-            <img src="assets/icons/colored/other/menu.svg" alt="Open menu">
-        </label>
-
-        <nav class="header-mobile">
-            <label for="menu-toggle" class="close-header-button">
-                <img src="assets/icons/colored/other/close.svg" alt="Close menu">
-            </label>
-
-            <p> <a href="index.html">Home</a> </p>
-            <p> <a href="discography.html">Discography</a> </p>
-            <p> <a href="faq.html">Faq</a> </p>
-            <p> <a href="contact.html">Contact</a> </p>
-            <p>
-                <a href="https://dariomenik.com" class="external-link" target="_blank" rel="noopener noreferrer"
-                    title="sound design portfolio">
-                    Sound Design
-                    <span class="external-symbol">
-                        <img src="assets/icons/colored/other/external_link.svg" alt="external link">
-                    </span>
-                </a>
-            </p>
-        </nav>
-
-
-    </header>
-
-    <main>
-
-        <div class="hero">
-            <div class="hero-container">
-                <img class="logo" src="assets/images/logo.svg" alt="Artifacts Recordings logo">
-
-                <h2 class="logo-subtitle">Production | Mixing | Mastering</h2>
-
-                <div class="buttons-container">
-                    <a href="discography.html">See my works</a>
-                    <a href="contact.html">Book a session</a>
-                </div>
+<main>
+    <!-- #region HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <img class="logo" src="assets/images/logo_b.svg" alt="Artifacts Recordings logo">
+            <h2 class="logo-subtitle">Production | Mixing | Mastering</h2>
+            <div class="buttons-container">
+                <a class="button" href="discography.html">See my works</a>
+                <a class="button" href="contact.html">Book a session</a>
             </div>
         </div>
+        <img class="arrow-icon" src="assets/icons/colored/other/arrow_down.svg" alt="Scroll down">
+    </section>
+    <!-- #endregion -->
 
-    </main>
+    <!-- #region STUDIO -->
+    <section class="intro-section" id="about">
+        <div class="intro-container">
 
-    <footer>
-        <div class="footer-container">
-            <p> <a class="footer-mail" href="mailto:dariomenik@gmail.com"> dariomenik@gmail.com </a> </p>
-            <p class="footer-copyright"> &copy; 2024 &vert; All Rights Reserved </p>
+            <div class="intro-header">
+                <p class="studio-location">Florence, Italy ~ working remotely</p>
+                <h2 class="studio-headline">Mixing & Mastering<br>for heavy music.</h2>
+                <div class="studio-body">
+                    <p>Artifacts Recordings is an online mixing and mastering studio for heavy music.</p>
+                    <p>No studio bookings, no hourly rates, no limits - just a focused workflow built around your
+                        project and needs.</p>
+                    <p>Every record gets the same attention: detailed work, direct communication, and an honest opinion
+                        when you need one.</p>
+                </div>
+                <p class="studio-body studio-body--accent">
+                    Heavy, Tight, and Punchy mix.
+                </p>
+            </div>
+
+
+            <div class="intro-about">
+                <div class="about-image">
+                    <img src="assets/images/profile.webp" alt="Dario Menik">
+                </div>
+                <div class="about-text">
+                    <h2>ABOUT</h2>
+                    <p>
+                        I'm Dario Menik and I'm an audio engineer, producer, and sound designer.
+                    </p>
+                    <p>
+                        Artifacts started small: helping local bands in Florence sound better than their budgets
+                        should have allowed. It grew from there, but the approach stayed the same —
+                        direct communication, honest feedback, and no wasted time.
+                    </p>
+                    <p>
+                        I work from a treated home studio, which keeps things lean and focused.
+                        No studio clock ticking in the background — just the music.
+                    </p>
+                </div>
+            </div>
+
         </div>
-    </footer>
-</body>
+    </section>
+    <!-- #endregion -->
 
-</html>
+    <!-- #region SERVICES -->
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <div class="section-title">Services</div>
+        </div>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <div class="service-body">
+                    <h3 class="service-title">Production</h3>
+                    <p class="service-desc">
+                        From scratch or from your demos — arranging, programming drums, writing guitar layers,
+                        synths and atmospheres. Building the sonic architecture of your track before a single note
+                        is tracked.
+                    </p>
+                    <ul class="service-list">
+                        <li>Song arrangement & pre-production</li>
+                        <li>Drum programming & editing</li>
+                        <li>Guitar & bass layers</li>
+                        <li>Synths, atmospheres & sound design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-divider"></div>
+
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <div class="service-body">
+                    <h3 class="service-title">Mixing</h3>
+                    <p class="service-desc">
+                        Taking your raw recordings and sculpting them into a cohesive, powerful mix.
+                        Every element in its place, every frequency fighting for the right space. Clarity without
+                        sacrifice.
+                    </p>
+                    <ul class="service-list">
+                        <li>Stem & multitrack mixing</li>
+                        <li>Vocal tuning & editing</li>
+                        <li>Drum replacement & augmentation</li>
+                        <li>Up to 3 revisions included</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-divider"></div>
+
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <div class="service-body">
+                    <h3 class="service-title">Mastering</h3>
+                    <p class="service-desc">
+                        The final step before release. Optimizing the stereo mix for all playback systems
+                        and streaming platforms, ensuring loudness, punch, and consistency across every format.
+                    </p>
+                    <ul class="service-list">
+                        <li>Streaming-optimized loudness</li>
+                        <li>Vinyl & CD mastering available</li>
+                        <li>ISRC / metadata embedding</li>
+                        <li>Stems mastering on request</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button-alt">
+            <a href="services.html">See all services</a>
+        </div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region LISTEN -->
+    <section class="listen-section" id="listen">
+        <div class="section-header">
+            <div class="section-title">Listen</div>
+        </div>
+        <audio id="audio" src="" preload="none"></audio>
+
+        <div class="audio-player">
+            <div class="player">
+                <div class="player-left-section">
+                    <img class="player-cover" id="cover" src="" alt="">
+                </div>
+                <div class="player-right-section">
+                    <div class="player-info">
+                        <div class="player-artist">
+                            <p id="artist"></p>
+                        </div>
+                        <div class="player-title">
+                            <p id="title"></p>
+                        </div>
+                        <div class="player-role">
+                            <p id="role"></p>
+                        </div>
+                    </div>
+                    <div class="player-controls">
+                        <div class="player-buttons">
+                            <div class="player-buttons-left">
+                                <button class="player-buttons-big" id="play-btn">
+                                    <img src="assets/icons/colored/player/play.svg" alt="Play">
+                                </button>
+                                <button class="player-buttons-small" id="skip-back-btn">
+                                    <img src="assets/icons/colored/player/skip_previous.svg" alt="Skip back">
+                                </button>
+                                <button class="player-buttons-small" id="skip-forward-btn">
+                                    <img src="assets/icons/colored/player/skip_next.svg" alt="Skip forward">
+                                </button>
+                                <div class="player-duration">
+                                    <span id="current-duration">0:00</span> / <span id="total-duration">0:00</span>
+                                </div>
+                            </div>
+                            <div class="player-buttons-right">
+                                <button class="player-buttons-small" id="volume-btn">
+                                    <img src="assets/icons/colored/player/volume_up.svg" alt="Volume">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="player-seek-bar">
+                            <input type="range" id="seek-bar" min="0" max="100" value="0"
+                                aria-label="Timeline Position">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="playlist"></div>
+        </div>
+
+        <div class="button-alt">
+            <a href="discography.html">Full discography</a>
+        </div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region CONTACT -->
+
+    <section class="home-contact-section" id="contact">
+        <div class="section-header">
+            <div class="section-title">Get in touch</div>
+            <div class="section-subtitle"> Send me a message and I'll get back to you shortly <br>
+                Fill the form below or drop me an email ~ </div>
+        </div>
+
+        <div class="contact-options">
+            <a class="contact-mail mail" href="mailto:dariomenik@gmail.com"> dariomenik@gmail.com </a>
+            <div>
+                <p class="contact-divider">+</p>
+            </div>
+            <div class="contact-socials">
+                <a href="{{ site.socials.linktree }}" target="_blank" rel="noopener" aria-label="See my Linktree">
+                    <img class="socials-icon" src="assets/icons/colored/socials/linktree.svg" alt="">
+                </a>
+                <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener"
+                    aria-label="Follow me on Instagram">
+                    <img class="socials-icon" src="assets/icons/colored/socials/instagram.svg" alt="">
+                </a>
+                <a href="{{ site.socials.facebook }}" target="_blank" rel="noopener" aria-label="Follow me on Facebook">
+                    <img class="socials-icon" src="assets/icons/colored/socials/facebook.svg" alt="">
+                </a>
+                <a href="{{ site.socials.linkedin }}" target="_blank" rel="noopener" aria-label="Follow me on LinkedIn">
+                    <img class="socials-icon" src="assets/icons/colored/socials/linkedin.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="home-contact-container">
+
+            <form class="home-contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="4c5c682c-ebd8-4920-be9d-38d34ea3ecfb">
+                <input type="hidden" name="redirect" value="https://artifactsrecordings.com/thanks.html">
+                <input type="hidden" name="replyto" value="email">
+                <input type="hidden" name="from_name" value="Artifacts Recordings">
+
+                <div class="home-contact-row">
+                    <input class="home-contact-input" type="text" name="name" placeholder="your name &ast;" required>
+                    <input class="home-contact-input" type="email" name="email" placeholder="email &ast;" required>
+                </div>
+                <textarea class="home-contact-textarea" name="message" rows="5"
+                    placeholder="tell me about your project &ast;" required></textarea>
+                <button class="button" type="submit">Send message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- #endregion -->
+</main>

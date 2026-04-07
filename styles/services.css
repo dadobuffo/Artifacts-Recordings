@@ -1,0 +1,215 @@
+.services-intro {
+  max-width: 680px;
+  margin: 0 auto var(--space-md);
+  padding: 0 20px;
+  text-align: center;
+}
+
+.services-intro p {
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  color: var(--txt-color-2);
+}
+
+.services-intro-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 400;
+  transition: opacity 0.15s;
+}
+
+.services-intro-link:hover {
+  opacity: 0.5;
+}
+
+/* ── Sections ── */
+
+.srv-section {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto var(--space-md);
+  padding: 0 10px;
+}
+
+.srv-section-label {
+  font-size: var(--fs-sm);
+  font-weight: 200;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--txt-color-3);
+
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--txt-color-4);
+}
+
+/* ── Grid ── */
+
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--txt-color-4);
+  border: 1px solid var(--txt-color-4);
+}
+
+.srv-grid--secondary {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ── Cards ── */
+
+.srv-card {
+  background-color: rgba(10, 10, 10, 1);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  /* needed for the watermark numeral */
+  position: relative;
+  overflow: hidden;
+}
+
+.srv-card--featured {
+  padding: 48px 40px;
+}
+
+.srv-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+/* numero romano come watermark di sfondo */
+.srv-num {
+  font-family: "Viaoda Libre", serif;
+  font-size: clamp(8rem, 18vw, 16rem);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.08em;
+  color: var(--txt-color-1);
+  opacity: 0.025;
+  user-select: none;
+  pointer-events: none;
+
+  position: absolute;
+
+  right: -0;
+  bottom: -50px;
+}
+
+.srv-title {
+  font-size: var(--fs-xl);
+  letter-spacing: 0.1em;
+  text-decoration: underline rgba(255, 250, 234, 0);
+  text-underline-offset: 0.15em;
+  transition: text-decoration 0.15s;
+}
+
+.srv-card:hover .srv-title {
+  text-decoration: underline rgba(255, 250, 234, 0.8);
+}
+
+.srv-desc {
+  line-height: 1.5;
+  color: var(--txt-color-2);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.srv-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.srv-list li {
+  font-size: var(--fs-sm);
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: var(--txt-color-3);
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.srv-list li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  color: var(--txt-color-3);
+}
+
+.srv-note {
+  font-size: 0.78rem;
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  opacity: 0.4;
+  font-style: italic;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* ── CTA ── */
+
+.srv-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  margin: var(--space-md) auto;
+  text-align: center;
+}
+
+.srv-cta-text {
+  font-size: var(--fs-base);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--txt-color-3);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .srv-grid,
+  .srv-grid--secondary {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .srv-grid,
+  .srv-grid--secondary {
+    grid-template-columns: 1fr;
+  }
+
+  .srv-card,
+  .srv-card--featured {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .srv-section {
+    padding: 0 6vw;
+  }
+
+  .srv-card,
+  .srv-card--featured {
+    padding: 10vw 7.5vw;
+  }
+
+  .srv-title {
+    font-size: 4.5vw;
+  }
+
+  .srv-desc {
+    font-size: 3.5vw;
+  }
+
+  .srv-cta {
+    padding: 25vw 6vw 37.5vw;
+  }
+}

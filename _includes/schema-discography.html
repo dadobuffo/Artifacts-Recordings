@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {% for item in site.data.portfolioData %}
+    {
+      "@type": "MusicRecording",
+      "name": "{{ item.title }}",
+      "byArtist": "{{ item.artist }}",
+      "description": "{{ item.info }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>

@@ -1,10 +1,13 @@
+/* #region INFO */
 .contact-text {
   display: flex;
   flex-direction: column;
+  text-align: center;
   max-width: 75ch;
   padding: 0 20px;
-  margin: 80px auto;
+  margin: var(--space-md) auto;
   gap: 15px;
+  color: var(--txt-color-2);
 }
 
 .contact-options {
@@ -14,16 +17,19 @@
   align-items: center;
   gap: 50px;
 
-  margin: 80px 0;
+  margin: var(--space-md) 0;
 }
 
-.mail {
+.contact-mail {
   flex: 1;
-
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
   text-align: right;
+}
+
+.divider {
+  font-size: var(--fs-xl);
+  color: var(--txt-color-3);
+  pointer-events: none;
+  user-select: none;
 }
 
 .contact-socials {
@@ -33,22 +39,12 @@
   flex-direction: row;
   justify-content: left;
   align-items: center;
+
   gap: 25px;
 }
+/* #endregion */
 
-.socials-icon {
-  height: 21px;
-  opacity: 1;
-
-  transition: opacity 0.15s;
-}
-
-.socials-icon:hover {
-  opacity: 0.3;
-}
-
-/* CONTACT FORM */
-
+/* #region FORM */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -57,7 +53,7 @@
 
   width: 100%;
   max-width: 800px;
-  margin: 0 auto 80px auto;
+  margin: var(--space-md) auto;
   padding: 0 20px;
 }
 
@@ -66,15 +62,15 @@
   width: 100%;
   padding: 0 20px;
 
+  font-size: var(--fs-sm);
+  line-height: 1.5;
   font-family: inherit;
   font-weight: inherit;
-  font-size: 0.9rem;
-  line-height: 20px;
   color: inherit;
 
-  background-color: rgba(80, 80, 80, 0.1);
+  background-color: rgba(10, 10, 10, 0.2);
   border: 1px solid rgba(255, 250, 234, 0.3);
-  border-radius: 8px;
+  border-radius: 6px;
 
   transition: background-color 0.1s;
 }
@@ -87,7 +83,7 @@
   resize: none;
   height: 165px;
   padding-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .contact-form-checkboxes {
@@ -97,7 +93,7 @@
   flex-direction: column;
   gap: 15px;
 
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   font-weight: 200;
   letter-spacing: 0.1em;
   color: inherit;
@@ -106,7 +102,7 @@
 }
 
 .contact-form-checkboxes-label {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   font-weight: 500;
   letter-spacing: 0.15em;
   margin-bottom: 5px;
@@ -129,47 +125,39 @@
   -moz-appearance: none;
   width: 19px;
   height: 19px;
-  background-color: rgba(80, 80, 80, 0.1);
+  background-color: rgba(10, 10, 10, 0.2);
   border: 1px solid rgba(255, 250, 234, 0.3);
   border-radius: 4px;
   display: inline-block;
   cursor: pointer;
-  transition: background-color 0.1s;
+  transition: background-color 0.15s;
 }
 
 .contact-form-checkboxes input[type="checkbox"]:checked::after {
   content: "\2714"; /* ✔ */
-  color: rgb(255, 250, 234);
+  color: var(--txt-color-1);
   position: relative;
   left: 3.5px;
   font-weight: 700;
 }
 
-.contact-form-submit-button {
-  padding: 10px 15px;
-
-  background-color: rgba(197, 197, 197, 0);
-  border: 1px solid rgba(255, 250, 234, 0.5);
-  border-radius: 6px;
-
-  font-family: inherit;
-  font-weight: regular;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  color: inherit;
-  cursor: pointer;
-
-  transition: background-color 0.15s;
-}
-
 .contact-form-box:hover,
+.contact-form-box:focus,
 .contact-form-textarea:hover,
+.contact-form-textarea:focus,
 .contact-form-checkboxes input[type="checkbox"]:hover,
-.contact-form-submit-button:hover {
-  background-color: rgba(197, 197, 197, 0.1);
+.contact-form-checkboxes input[type="checkbox"]:focus {
+  background-color: rgba(255, 250, 234, 0.05);
+  border-color: rgba(255, 250, 234, 0.3);
+  outline: none;
 }
+/* #endregion */
 
 @media (max-width: 768px) {
+  .contact-text {
+    padding: 0 10px;
+  }
+
   .contact-options {
     flex-direction: column;
     align-items: center;
@@ -179,44 +167,53 @@
   .mail {
     text-align: center;
   }
+
+  .contact-form {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .contact-form-box,
+  .contact-form-textarea {
+    padding: 0 15px;
+  }
+
+  .contact-form-textarea {
+    padding-top: 15px;
+  }
+
+  .contact-form-checkboxes {
+    gap: 10px;
+  }
+
+  .checkbox-row {
+    gap: 10px;
+  }
 }
 
 @media (max-width: 320px) {
   .contact-text {
-    padding: 0 6.25vw;
-    margin: 25vw auto;
+    padding: 0 3.13vw;
     gap: 4.69vw;
   }
 
   .contact-options {
     gap: 4.69vw;
-    margin: 25vw 0;
-  }
-
-  .mail {
-    font-size: 4.5vw;
   }
 
   .contact-socials {
     gap: 7.81vw;
   }
 
-  .socials-icon {
-    height: 6.56vw;
-  }
-
   .contact-form {
-    gap: 4.69vw;
-    margin: 0 auto 25vw auto;
-    padding: 0 6.25vw;
+    gap: 3.13vw;
+    padding: 0 3.13vw;
   }
 
   .contact-form-box,
   .contact-form-textarea {
-    padding: 0 6.25vw;
-    font-size: 4.5vw;
-    line-height: 6.25vw;
-    border-radius: 2.5vw;
+    padding: 0 4.69vw;
+    border-radius: 1.88vw;
   }
 
   .contact-form-box {
@@ -226,22 +223,20 @@
   .contact-form-textarea {
     height: 51.56vw;
     padding-top: 4.69vw;
-    margin-bottom: 9.38vw;
+    margin-bottom: 12.5vw;
   }
 
   .contact-form-checkboxes {
-    gap: 4.7vw;
-    font-size: 4.5vw;
-    margin: 4.7vw 0;
+    gap: 3.13vw;
+    margin: 4.69vw 0;
   }
 
   .contact-form-checkboxes-label {
-    font-size: 5vw;
     margin-bottom: 1.56vw;
   }
 
   .checkbox-row {
-    gap: 7.81vw;
+    gap: 3.13vw;
   }
 
   .contact-form-checkboxes input[type="checkbox"] {
@@ -251,14 +246,6 @@
   }
 
   .contact-form-checkboxes input[type="checkbox"]:checked::after {
-    top: 0;
     left: 1.09vw;
-    font-size: 4vw;
-  }
-
-  .contact-form-submit-button {
-    padding: 3.13vw 4.69vw;
-    border-radius: 1.88vw;
-    font-size: 5vw;
   }
 }

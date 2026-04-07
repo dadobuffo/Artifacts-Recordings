@@ -1,0 +1,34 @@
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization",
+          "name": "{{ site.title }}",
+          "url": "{{ site.url }}",
+          "logo": "{{ site.url }}/assets/images/logo_a.svg",
+          "sameAs": [
+            "{{ site.socials.facebook }}",
+            "{{ site.socials.instagram }}",
+            "{{ site.socials.linkedin }}"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+39-388-391-7855",
+            "contactType": "customer service",
+            "email": "dariomenik@gmail.com",
+            "availableLanguage": ["English", "Italian"]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "{{ site.url }}/#person",
+          "name": "{{ site.author }}",
+          "alternateName": "Dario Menichetti",
+          "jobTitle": "Audio Engineer, Producer, Sound Designer",
+          "worksFor": { "@id": "{{ site.url }}/#organization" }
+        }
+      ]
+    }
+</script>

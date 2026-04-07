@@ -12,23 +12,38 @@
 }
 
 .faq-question {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
+  text-decoration: underline rgba(255, 250, 234, 0);
+  text-underline-offset: 0.2em;
+  transition: text-decoration 0.15s;
+}
+
+.faq-item:hover .faq-question {
+  text-decoration: underline rgba(255, 250, 234, 0.8);
+}
+
+.faq-answer {
+  color: var(--txt-color-2);
 }
 
 .highlighted-download {
   text-transform: uppercase;
   font-weight: 700;
+
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .faq-container {
+    padding: 0 clamp(10px, -10px + 6.25vw, 20px);
+  }
 }
 
 @media (max-width: 320px) {
   .faq-container {
-    gap: 9.5vw;
+    gap: 9.38vw;
     margin: 0 auto 25vw auto;
-    padding: 0 6vw;
+    padding: 0 3.13vw;
   }
 }

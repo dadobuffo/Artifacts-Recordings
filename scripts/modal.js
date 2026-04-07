@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     portfolioData = await res.json();
   } catch (err) {
-    console.error("Errore caricamento JSON:", err);
+    console.error("Error loading JSON:", err);
     gridContainer.textContent = "Error loading portfolio data.";
     return;
   }
@@ -25,15 +25,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       card.className = "grid-item";
       card.dataset.id = item.id;
       card.innerHTML = `
-      <img class="grid-item-cover" src="${item.cover}" alt="${item.artist} - ${
-        item.title
-      }">
-      <div class="grid-item-overlay"></div>
-      <div class="grid-item-text">
-        <p class="grid-item-name">${item.artist} - ${item.title}</p>
-        <p class="grid-item-role">${item.role || ""}</p>
-      </div>
-    `;
+        <img class="grid-item-cover" src="${item.cover}" alt="${item.artist} - ${item.title}">
+        <div class="grid-item-overlay"></div>
+        <div class="grid-item-text">
+          <p class="grid-item-name">${item.artist} - ${item.title}</p>
+          <p class="grid-item-role">${item.role || ""}</p>
+        </div>
+      `;
       gridContainer.appendChild(card);
     });
 
@@ -43,18 +41,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     lastScrollY = window.scrollY;
     document.body.classList.add("modal-open");
-
     lastFocusedItem = card;
 
     const item = portfolioData.find((i) => String(i.id) === card.dataset.id);
     if (!item) return;
+
     modal.querySelector(".modal-cover").src = item.cover;
     modal.querySelector(".modal-cover").alt = `${item.artist} - ${item.title}`;
     modal.querySelector(".modal-artist").textContent = item.artist;
-    modal.querySelector(".modal-title").textContent = item.title;
+    modal.querySelector(".modal-title").textContent = `"${item.title}"`;
     modal.querySelector(".modal-info").textContent = item.info || "";
     modal.querySelector(".modal-role").textContent = item.role || "";
-    modal.querySelector(".modal-video iframe").src = item.video || "";
+    modal.querySelector(".modal-video iframe").src =
+      item.video || "about:blank";
 
     const linksContainer = modal.querySelector(".modal-links");
     linksContainer.innerHTML = "";
@@ -80,18 +79,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       const img = document.createElement("img");
       img.className = "socials-icon";
       img.src = `assets/icons/colored/socials/${icon}.svg`;
-      img.alt = `${key}`;
+      img.alt = "";
 
       a.appendChild(img);
       linksContainer.appendChild(a);
     });
+
     modal.showModal();
   });
 
   function closeModal() {
     const iframe = modal.querySelector(".modal-video iframe");
     modal.close();
-    if (iframe) iframe.src = "";
+    if (iframe) iframe.src = "about:blank";
     document.body.classList.remove("modal-open");
     window.scrollTo(0, lastScrollY);
     lastFocusedItem?.focus();

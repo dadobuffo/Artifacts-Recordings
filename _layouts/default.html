@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <title>{{ page.title | default: site.title }}</title>
+
+    <!-- METADATA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="theme-color" content="{{ site.theme_color }}">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:image" content="{{ page.og_image | default: '' }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ page.og_image | default: '' }}">
+
+    <!-- JSON-LD -->
+    {% include schema.html %}
+    {% if page.schema %}
+    {% include {{ page.schema }} %}
+    {% endif %}
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Artifacts Recordings" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- PRELOAD -->
+    <link rel="preload" href="/assets/fonts/roboto-serif-v17-latin_latin-ext-300.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="/assets/fonts/viaoda-libre-v20-latin_latin-ext-regular.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="/assets/images/background.webp" as="image">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/general.css">
+    {% for style in page.styles %}
+    <link rel="stylesheet" href="/styles/{{ style }}">
+    {% endfor %}
+
+    <!-- JS -->
+    <script src="/scripts/general.js" defer></script>
+    {% for script in page.scripts %}
+    <script src="/scripts/{{ script }}" defer></script>
+    {% endfor %}
+</head>
+
+<body>
+    {% include header.html %}
+    {{ content }}
+    {% include socials-float.html %}
+    {% include footer.html %}
+</body>
+
+</html>

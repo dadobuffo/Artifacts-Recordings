@@ -41,11 +41,10 @@ body.modal-open {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 80px;
-
+  gap: 60px;
   width: 100%;
-  max-width: 1300px;
-  padding: 0 50px;
+  max-width: 1200px;
+  margin: 0 20px;
 }
 
 .modal-left-section {
@@ -63,12 +62,11 @@ body.modal-open {
 }
 
 .modal-left-text {
-  font-size: 1.6rem;
+  font-size: var(--fs-xl);
+  color: var(--txt-color-1);
   font-weight: regular;
-  letter-spacing: 0.25em;
-  line-height: 2rem;
-
-  color: rgb(255, 250, 234);
+  letter-spacing: 0.15em;
+  line-height: 1.6;
   text-align: center;
   text-transform: none;
 }
@@ -84,12 +82,11 @@ body.modal-open {
 }
 
 .modal-right-text {
-  font-size: 1.2rem;
+  font-size: var(--fs-lg);
+  color: var(--txt-color-2);
   font-weight: 200;
-  letter-spacing: 0.18em;
-  line-height: 2rem;
-
-  color: rgb(255, 250, 234);
+  letter-spacing: 0.1em;
+  line-height: 1.6;
   text-align: center;
   text-transform: none;
 }
@@ -110,20 +107,18 @@ body.modal-open {
   gap: 30px;
 }
 
-.socials-icon {
-  height: 22px;
-
-  transition: opacity 0.15s;
-}
-
-.socials-icon:hover {
-  opacity: 0.3;
-}
-
 @media (max-width: 1350px) {
   .modal-container {
-    gap: 7%;
-    padding: 0 4%;
+    gap: clamp(10px, calc(-55.979px + 8.591vw), 60px);
+    margin: 0 clamp(10px, calc(-3.196px + 1.718vw), 20px);
+  }
+
+  .modal-left-text {
+    font-size: clamp(var(--fs-lg), 0.883rem + 0.66vw, var(--fs-xl));
+  }
+
+  .modal-right-text {
+    font-size: clamp(var(--fs-base), 0.736rem + 0.55vw, var(--fs-lg));
   }
 }
 
@@ -135,9 +130,17 @@ body.modal-open {
 
   .modal-container {
     flex-direction: column;
-    gap: 15px;
-    padding: 0 10px;
+    gap: 20px;
+    margin: 0 10px;
     max-width: 500px;
+  }
+
+  .modal-left-text {
+    font-size: var(--fs-base);
+  }
+
+  .modal-right-text {
+    font-size: var(--fs-sm);
   }
 
   .modal-left-section,
@@ -147,26 +150,12 @@ body.modal-open {
     width: 100%;
   }
 
-  .modal-left-text {
-    font-size: 1.1rem;
-    line-height: 1.6rem;
-  }
-
-  .modal-right-text {
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-  }
-
   .modal-left-section img {
     width: 80%;
   }
 
   .modal-links {
     gap: 20px;
-  }
-
-  .socials-icon {
-    height: 20px;
   }
 }
 
@@ -176,8 +165,8 @@ body.modal-open {
   }
 
   .modal-container {
-    gap: 4.69vw;
-    padding: 0 3.13vw;
+    gap: 6.25vw;
+    margin: 0 3.13vw;
   }
 
   .modal-left-section,
@@ -185,21 +174,7 @@ body.modal-open {
     gap: 4.69vw;
   }
 
-  .modal-left-text {
-    font-size: 5.5vw;
-    line-height: 8vw;
-  }
-
-  .modal-right-text {
-    font-size: 4.5vw;
-    line-height: 7vw;
-  }
-
   .modal-links {
     gap: 6.25vw;
-  }
-
-  .socials-icon {
-    height: 6.25vw;
   }
 }
