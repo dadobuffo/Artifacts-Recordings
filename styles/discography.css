@@ -21,11 +21,13 @@
 }
 
 .grid-container {
+  width: 100%;
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
-  max-width: 900px;
-  margin: 0 20px;
 }
 
 .grid-item {
@@ -107,7 +109,6 @@
 
   .grid-container {
     grid-template-columns: 1fr 1fr;
-    margin: 0 10px;
   }
 
   .grid-item-text {
@@ -132,7 +133,6 @@
 @media (max-width: 320px) {
   .grid-container {
     gap: 3.13vw;
-    margin: 0 3.13vw;
   }
 }
 /* #endregion */

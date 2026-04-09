@@ -79,14 +79,20 @@
   --fs-7xl: 4.3rem;
   --fs-8xl: 5.16rem;
 
-  --space-lg: 180px;
-  --space-md: 90px;
-  --space-sm: 90px;
-
   --txt-color-1: rgb(255, 250, 234);
   --txt-color-2: rgb(208, 204, 191);
   --txt-color-3: rgb(148, 145, 136);
   --txt-color-4: rgb(53, 52, 50);
+
+  --space-sm: 90px;
+  --space-md: 90px;
+  --space-lg: 180px;
+
+  --page-padding: 20px;
+
+  --max-width-sm: 600px;
+  --max-width-md: 800px;
+  --max-width-lg: 1000px;
 }
 
 html {
@@ -380,10 +386,11 @@ footer {
 main {
   flex-grow: 1;
   background-color: transparent;
+  padding: 0 var(--page-padding);
 }
 
 .page-title {
-  margin: 190px 10px var(--space-md);
+  margin: 190px auto var(--space-md);
 }
 
 .socials-icon {
@@ -479,7 +486,7 @@ main {
 /* #region MEDIA QUERY */
 @media (max-width: 768px) {
   :root {
-    --space-lg: 80px;
+    --space-lg: 100px;
     --space-md: 80px;
     --space-sm: 60px;
   }
@@ -492,6 +499,7 @@ main {
   h3 {
     font-size: clamp(var(--fs-base), 0.857rem + 0.714vw, var(--fs-lg));
   }
+
   header {
     padding: 0;
     justify-content: center;
@@ -571,7 +579,20 @@ main {
     --fs-7xl: 21.5vw;
     --fs-8xl: 25.8vw;
 
+    --space-lg: 31.25vw;
     --space-md: 25vw;
+    --space-sm: 18.75vw;
+
+    --page-padding: 6.25vw;
+  }
+
+  h1 {
+    font-size: var(--fs-3xl);
+  }
+
+  h2,
+  h3 {
+    font-size: var(--fs-base);
   }
 
   header {

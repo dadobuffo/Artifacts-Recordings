@@ -2,11 +2,13 @@
 .contact-text {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  max-width: 75ch;
-  padding: 0 20px;
-  margin: var(--space-md) auto;
+  text-align: left;
   gap: 15px;
+
+  width: 100%;
+  max-width: var(--max-width-sm);
+  margin: 0 auto;
+
   color: var(--txt-color-2);
 }
 
@@ -52,9 +54,8 @@
   gap: 15px;
 
   width: 100%;
-  max-width: 800px;
+  max-width: var(--max-width-md);
   margin: var(--space-md) auto;
-  padding: 0 20px;
 }
 
 .contact-form-box,
@@ -154,10 +155,6 @@
 /* #endregion */
 
 @media (max-width: 768px) {
-  .contact-text {
-    padding: 0 10px;
-  }
-
   .contact-options {
     flex-direction: column;
     align-items: center;
@@ -170,7 +167,6 @@
 
   .contact-form {
     gap: 10px;
-    padding: 0 10px;
   }
 
   .contact-form-box,
@@ -193,7 +189,6 @@
 
 @media (max-width: 320px) {
   .contact-text {
-    padding: 0 3.13vw;
     gap: 4.69vw;
   }
 
@@ -207,7 +202,6 @@
 
   .contact-form {
     gap: 3.13vw;
-    padding: 0 3.13vw;
   }
 
   .contact-form-box,

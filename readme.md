@@ -16,9 +16,9 @@ Make sure Ruby and Bundler are installed, then run:
 Start the local server with live reload:
 
     bundle exec jekyll clean
-    bundle exec jekyll serve --livereload --force_polling
+    bundle exec jekyll serve --livereload --force_polling --host 0.0.0.0
 
-Open [http://localhost:4000](http://localhost:4000) in your browser.
+Open (http://192.168.1.156:4000) in your browser.
 
 ## Project structure
 

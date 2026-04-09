@@ -1,8 +1,7 @@
 .services-intro {
-  max-width: 680px;
+  width: 100%;
+  max-width: var(--max-width-sm);
   margin: 0 auto var(--space-md);
-  padding: 0 20px;
-  text-align: center;
 }
 
 .services-intro p {
@@ -26,20 +25,19 @@
 
 .srv-section {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 0 auto var(--space-md);
-  padding: 0 10px;
 }
 
 .srv-section-label {
   font-size: var(--fs-sm);
   font-weight: 200;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--txt-color-3);
 
-  margin-bottom: 50px;
-  padding-bottom: 15px;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--txt-color-4);
 }
 
@@ -53,49 +51,32 @@
   border: 1px solid var(--txt-color-4);
 }
 
-.srv-grid--secondary {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 /* ── Cards ── */
 
 .srv-card {
-  background-color: rgba(10, 10, 10, 1);
-  padding: 40px;
+  background-color: rgba(10, 10, 10, 0.9);
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 
-  /* needed for the watermark numeral */
   position: relative;
   overflow: hidden;
 }
 
-.srv-card--featured {
-  padding: 48px 40px;
-}
-
-.srv-card-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0;
-}
-
-/* numero romano come watermark di sfondo */
 .srv-num {
   font-family: "Viaoda Libre", serif;
-  font-size: clamp(8rem, 18vw, 16rem);
+  font-size: 15rem;
   line-height: 1;
   font-weight: 400;
   letter-spacing: -0.08em;
   color: var(--txt-color-1);
-  opacity: 0.025;
+  opacity: 0.01;
   user-select: none;
   pointer-events: none;
 
   position: absolute;
 
-  right: -0;
+  right: 0;
   bottom: -50px;
 }
 
@@ -105,6 +86,7 @@
   text-decoration: underline rgba(255, 250, 234, 0);
   text-underline-offset: 0.15em;
   transition: text-decoration 0.15s;
+  margin-bottom: 15px;
 }
 
 .srv-card:hover .srv-title {
@@ -130,7 +112,7 @@
   font-weight: 200;
   letter-spacing: 0.1em;
   color: var(--txt-color-3);
-  padding-left: 1.5em;
+  padding-left: 1.25em;
   position: relative;
 }
 
@@ -139,16 +121,6 @@
   position: absolute;
   left: 0;
   color: var(--txt-color-3);
-}
-
-.srv-note {
-  font-size: 0.78rem;
-  font-weight: 200;
-  letter-spacing: 0.08em;
-  opacity: 0.4;
-  font-style: italic;
-  margin-top: auto;
-  padding-top: 8px;
 }
 
 /* ── CTA ── */
@@ -170,46 +142,55 @@
   color: var(--txt-color-3);
 }
 
-/* ── Responsive ── */
-
-@media (max-width: 900px) {
-  .srv-grid,
-  .srv-grid--secondary {
-    grid-template-columns: 1fr 1fr;
-  }
+@media (max-width: 1200px) {
 }
 
-@media (max-width: 600px) {
-  .srv-grid,
-  .srv-grid--secondary {
+@media (max-width: 768px) {
+  .srv-section {
+    max-width: 350px;
+  }
+
+  .srv-grid {
     grid-template-columns: 1fr;
   }
 
-  .srv-card,
-  .srv-card--featured {
-    padding: 32px 24px;
+  .srv-card {
+    padding: 30px;
   }
 }
 
 @media (max-width: 320px) {
-  .srv-section {
-    padding: 0 6vw;
+  .services-intro-link {
+    text-underline-offset: 0.94vw;
   }
 
-  .srv-card,
-  .srv-card--featured {
-    padding: 10vw 7.5vw;
+  .srv-section-label {
+    margin-bottom: 12.5vw;
+    padding-bottom: 3.13vw;
+  }
+
+  .srv-card {
+    padding: 9.38vw;
+  }
+
+  .srv-num {
+    font-size: 75vw;
+    bottom: -15.63vw;
   }
 
   .srv-title {
-    font-size: 4.5vw;
+    margin-bottom: 4.69vw;
   }
 
   .srv-desc {
-    font-size: 3.5vw;
+    margin-bottom: 6.25vw;
+  }
+
+  .srv-list {
+    gap: 1.88vw;
   }
 
   .srv-cta {
-    padding: 25vw 6vw 37.5vw;
+    gap: 7.81vw;
   }
 }
