@@ -191,7 +191,7 @@
         "video": "https://www.youtube.com/embed/VJFM6zrFRgU",
         "linkFacebook": "https://www.facebook.com/jerabandit",
         "linkInstagram": "https://www.instagram.com/jera.band/",
-        "linkYoutube": "https://www.youtube.com/channel/UCl-vHycAzTG4WILVXUJ90nQ",
+        "linkYoutube": "https://www.youtube.com/@jeraofficial",
         "linkSpotify": "https://open.spotify.com/intl-it/artist/1HUQMHjmuDFjSxXJRAk430?si=IeJBD48BQe-vhmQXggt5cQ",
         "linkApple": "https://music.apple.com/it/artist/jera/1589160588"
     },
@@ -205,7 +205,7 @@
         "video": "https://www.youtube.com/embed/7IkC27qZpTY",
         "linkFacebook": "https://www.facebook.com/jerabandit",
         "linkInstagram": "https://www.instagram.com/jera.band/",
-        "linkYoutube": "https://www.youtube.com/channel/UCl-vHycAzTG4WILVXUJ90nQ",
+        "linkYoutube": "https://www.youtube.com/@jeraofficial",
         "linkSpotify": "https://open.spotify.com/intl-it/artist/1HUQMHjmuDFjSxXJRAk430?si=IeJBD48BQe-vhmQXggt5cQ",
         "linkApple": "https://music.apple.com/it/artist/jera/1589160588"
     },
@@ -233,7 +233,7 @@
         "video": "https://www.youtube.com/embed/-SAQsYqI0UA",
         "linkFacebook": "https://www.facebook.com/jerabandit",
         "linkInstagram": "https://www.instagram.com/jera.band/",
-        "linkYoutube": "https://www.youtube.com/channel/UCl-vHycAzTG4WILVXUJ90nQ",
+        "linkYoutube": "https://www.youtube.com/@jeraofficial",
         "linkSpotify": "https://open.spotify.com/intl-it/artist/1HUQMHjmuDFjSxXJRAk430?si=IeJBD48BQe-vhmQXggt5cQ",
         "linkApple": "https://music.apple.com/it/artist/jera/1589160588"
     },
@@ -247,8 +247,22 @@
         "video": "https://www.youtube.com/embed/vkQp338toGM",
         "linkFacebook": "https://www.facebook.com/jerabandit",
         "linkInstagram": "https://www.instagram.com/jera.band/",
-        "linkYoutube": "https://www.youtube.com/channel/UCl-vHycAzTG4WILVXUJ90nQ",
+        "linkYoutube": "https://www.youtube.com/@jeraofficial",
         "linkSpotify": "https://open.spotify.com/intl-it/artist/1HUQMHjmuDFjSxXJRAk430?si=IeJBD48BQe-vhmQXggt5cQ",
         "linkApple": "https://music.apple.com/it/artist/jera/1589160588"
+    },
+    {
+        "id": "19",
+        "cover": "assets/images/covers/Darko. - BACK FROM THE HELL.webp",
+        "artist": "Darko.",
+        "title": "BACK FROM THE HELL",
+        "info": "album | metalcore | 2026",
+        "role": "produced, engineered, mixed, mastered",
+        "video": "https://www.youtube.com/watch?v=83KNRXNdnxM",
+        "linkFacebook": "",
+        "linkInstagram": "https://www.instagram.com/darko_official0/",
+        "linkYoutube": "https://www.youtube.com/@DarkoOfficial-qz5zi",
+        "linkSpotify": "https://open.spotify.com/intl-it/artist/5rPodOinOpmMJE5NOwTtW5?si=i8logiQIQr674XOxKiS6FA",
+        "linkApple": ""
     }
 ]
